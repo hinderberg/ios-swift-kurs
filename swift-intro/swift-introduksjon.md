@@ -1,3 +1,16 @@
+
+# [fit] Velkommen
+### Introduksjon til _Swift_
+
+---
+
+### Hans Magnus Inderberg
+#### BEKK, SpareBank 1 Mobilbank
+#### Fagleder Mobil
+#### _@hinderberg_
+
+---
+
 ![](wwdc.png)
 
 ^ Under utviklerkonferansen WWDC i starten av Juni, lanserte Apple ganske så uventet et nytt programmeringsspråk kalt Swift.
@@ -8,9 +21,7 @@
 
 ^ kalt Swift.
 
----
-
-## Et nytt programmeringsspråk for iOS og OS X
+^Et nytt programmeringsspråk for iOS og OS X
 
 ---
 
@@ -32,13 +43,6 @@
 
 ---
 
-### Hans Magnus Inderberg
-#### BEKK, SpareBank 1 Mobilbank
-#### Fagleder Mobil
-#### _@hinderberg_
-
----
-
 # Agenda
 
 1. _Hva er swift og hvordan ser det ut?_
@@ -50,11 +54,11 @@
 ---
 
 # Hva er Swift?
-* _Et programmeringsspråk_
-* _Fokus på sikkerhet og enkelhet i språket_
-* _Fungerer side-om-side med Objetice-C ved hjelp av broer_
-* _Utviklingen startet for omtrent 4're år siden_
-* _Forener flere paradigmer som imperativ, OOP og funksjonelt_  
+* _Et programmeringsspråk laget av Apple_
+* _Fokus på Enkelhet_
+* _Sikkerhet, moderne og kraf_
+* _Fungerer side-om-side med Objetice-C_
+* _Paradigmer som imperativ, OOP og funksjonelt_  
 
 ^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
 De sier at språket har fokus på sikkerhet og det merkes ved at kompileren er
@@ -75,11 +79,11 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 
 
 
-var stringVariable: String = "Hello World"
-stringVariable = "Hello BEKK"
+var numberOfemployees: Int = 320
+numberOfemployees = 500
 
 
-let stringConstant: String = "Hello BEKK"
+let shortName: String = "BEKK"
 ```
 
 ^ Konstanter deklareres med LET og variabler med VAR
@@ -94,11 +98,11 @@ Dette vil blant annet gjøre det enklere i multi-treding og enklere for kompiler
 
 
 
-var stringVariable = "Hello World"
-stringVariable = "Hello BEKK"
+var numberOfemployees = 350
+numberOfemployees = 500
 
 
-let stringConstant = "Hello BEKK"
+let shortName = "BEKK"
 ```
 
 
@@ -115,13 +119,14 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 # Unicode støtte
 
+
 ```swift
 
 
 
-
-				   let 🌍 = "😩😛😵😘"
+                   let 🌍 = "😩😛😵😘"
 ```
+
 
 ^Jada, du kan bruke emicons
 
@@ -132,13 +137,13 @@ For eksempel hvis du setter en Double til å vœre Float.
 ```swift
 
 
-var variableString = "Bekk"
-variableString += " Consulting"
+var fullName = "Bekk"
+fullName += " Consulting"
 // variableString er nå Bekk Consulting"
 
-let constantString = "Bekk"
-constantString += " Consulting"
-// kompilatoren sier da: error - constantString cannot be changed
+let fullName = "Bekk"
+fullName += " Consulting"
+// error - constantString cannot be changed
 
 ```
 
@@ -180,24 +185,26 @@ _Det finnes to typer collections i Swift_
 ```swift
 // Deklaring, merk ingen spesifisering av type
 
-var names = ["Aleksander", "David", "Anders"]
+var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
 
 // Uthenting
 
-names[0]
-
-// Modifisering
-
-names += "Jon"
-todo += ["Lars", "Linda"]
-todo[0] = "Aleksander Ny"
-todo[2..<5] = ["Svein", "Gro", "Johanne"]
+jobs[0]
 ```
 
 ^ Et array deklareres på veldig standard måte, med to klammer. Uthenting er som vanlig.
 Forskjellig fra objective-c er at type inference gjør at disse er typed arrays
-Men ved modifisering har de blitt litt morsomme.
-Du bruker + for å legge til og på eksempelet i bunn så brukes noe de kaller Ranges, mer om det litt senere.
+
+---
+
+```swift
+// Modifisering
+
+jobs.append("Rådgiver")
+jobs += ["Rådgiver", "Backend-Utvikler"]
+jobs[0] = "Backend-Utvikler"
+jobs[2..<5] = ["Rådgiver", "Backend-Utvikler", "Prosjektleder"]
+```
 
 ---
 
@@ -206,16 +213,16 @@ Du bruker + for å legge til og på eksempelet i bunn så brukes noe de kaller R
 ```swift
 // Deklaring
 
-var people = ["Jon" : 30, "Lars" : 21, "Linda" : 18]
+var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
 
 // Uthenting
 
-people["Jon"]
+jobs["Systemutvikler"]
 
 // Modifisering
 
-people["Jon"] = 35
-people["Linda"] = 81
+people["Rådgiver"] = 45
+people["Prosjektleder"] = 81
 ```
 
 ^ I dicionary så holdes ting på normalt nivå og mange av dere kjenner nok igjen dette fra andre språk.
@@ -292,9 +299,9 @@ hvis ikke blir det compile error_
 ```swift
 switch age {
 case 1,2,3,4,5,6,7,8,9,10:
-    println("Barn")
+    println("Du er et barn!")
 case 80...100:
-    println("Gammel")
+    println("Du er gammal!")
 default:
     println("I mellom en plass?;)")
 }
@@ -324,24 +331,25 @@ switch sender {
 ---
 
 ```swift
-var possibleString: String? = "Hello"
+var possibleWelcomeMessage: String? = "Halloo"
 
-if possibleString == nil {
-	println("Could not print the string")
+if possibleWelcomeMessage == nil {
+	println("Det er ingen streng her!")
 } else {
-	let theString = possibleString! //unwrapping
-	println(theString)
+	// unwrapping med !
+	let welcomeMessage = possibleWelcomeMessage!
+	println(welcomeMessage)
 }
+```
 
 ^Greit å vite at typer som ikke er optinal kan ikke vœre nil.
 Da får man kompile error
-```
 
 ---
 
 ```swift
-if let theString = possibleString {
-		println(theString)
+if let welcomeMessage = possibleWelcomeMessage {
+		println(welcomeMessage)
 }
 ```
 
@@ -352,10 +360,10 @@ if let theString = possibleString {
 # Optional chaining
 
 ```swift
-if let street = hansm.residence?.address?.street {
-		println("Hans Magnus bor i \(street).")
+if let street = bekk.people.first?.address?.street {
+    println("Personen bor i \(street).")
 } else {
-		println("Kunne ikke hente gatenavn")
+    println("Kunne ikke hente gatenavn")
 }
 ```
 
@@ -641,9 +649,9 @@ Et eksempel på stored properties
 
 # Klasser kan i tillegg
 
-* _Kan bruke arv_
-* _Type casting - Man kan sjekke og tolke typen runtime_
-* _Bruke Deinitializers - for å rydde opp når instansen skal bli kastet_
+* _Arv_
+* _Type casting - man kan sjekke og tolke typen runtime_
+* _`deinitializers` for opprydding når instansen blir kastet_
 * _Referanse telling - mer enn en referanse til en klasseinstans_
 
 ^ Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
@@ -667,6 +675,17 @@ sameMode.name = "En annen modus"
 
 ^Legg merke til at man slipper alloc og eller new
 Man har også konstruktører og de heter init
+
+---
+
+# Når bruke struct
+
+* _Når du skal enkapsulere enkle dataverdier_
+* _Når verdiene bør bli kopiert og ikke referert til_
+* _Når alle properties i structuren er value types_
+* _Når man ikke trenger arv fra andre typer_
+
+Eksempel: _String, Array og Dictionary er structs_
 
 ---
 
@@ -799,17 +818,6 @@ class Car: Vehicle {
   	}
 }
 ```
-
----
-
-# Når bruke struct
-
-* _Når du skal enkapsulere enkle dataverdier_
-* _Når verdiene bør bli kopiert og ikke referert til_
-* _Når alle properties i structuren er value types_
-* _Når man ikke trenger arv fra andre typer_
-
-Eksempel: _String, Array og Dictionary er structs_
 
 ---
 
@@ -993,6 +1001,5 @@ if let imageUrl = potensialImgUrl {
 
 # Ressurser
 
-1. https://developer.apple.com/videos/wwdc/2014/
-2. https://developer.apple.com/swift/
-3.
+1. _https://developer.apple.com/videos/wwdc/2014/_
+2. _https://developer.apple.com/swift/_
