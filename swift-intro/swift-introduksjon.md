@@ -39,11 +39,21 @@
 
 ---
 
+# Agenda
+
+1. _Hva er swift og hvordan ser det ut?_
+2. _Lettvekt og syntax_
+3. _Litt mer avansert_
+2. _Playground_
+3. _REPL_
+
+---
+
 # Hva er Swift?
-* _Laget av Apple_
+* _Et programmeringsspråk_
 * _Fokus på sikkerhet og enkelhet i språket_
-* _Fungerer side-om-side med Objetice-C_
-* _Utviklet i omtrent 4're år allerede_
+* _Fungerer side-om-side med Objetice-C ved hjelp av broer_
+* _Utviklingen startet for omtrent 4're år siden_
 * _Forener flere paradigmer som imperativ, OOP og funksjonelt_  
 
 ^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
@@ -59,27 +69,43 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 
 ---
 
-# Variabler
+# Variabler og konstanter
 
 ```swift
-// let - Konstant
-// var - Variabel
 
-// Uten definering av type
-var numberVariable = 42
-numberVariable = 50
-let numberConstant = 42
 
-// Med definert type
+
 var stringVariable: String = "Hello World"
 stringVariable = "Hello BEKK"
-let stringConstant: String = "Hello World"
+
+
+let stringConstant: String = "Hello BEKK"
 ```
 
 ^ Konstanter deklareres med LET og variabler med VAR
 En konstant kan bare bli satt en gang, men det må ikke skje ved kompilering.
+I Swift er det foretrukket å bruke konstanter og imutable verdier, med mindre noe skal endre seg
+Dette vil blant annet gjøre det enklere i multi-treding og enklere for kompileren.
 
-^Type interence er et stort fokus punkt i Swift og de bruker det både oppover og nedover i type-treet.
+---
+
+# Type inference
+```swift
+
+
+
+var stringVariable = "Hello World"
+stringVariable = "Hello BEKK"
+
+
+let stringConstant = "Hello BEKK"
+```
+
+
+^Type interence er et stort fokus punkt i Swift.
+Det betyr med andre ord at du skjelden trenger å spesifisere typen. Men typen vil fortsatt vœre der.
+
+^De analyserer både oppover og nedover i type-treet.
 Det vil si at om du ikke spesifiserer typen, så vil det analysere output av det du setter variabelen din til for å finne typen.
 
 ^Men om du setter typen, så vi den typen overskrive den faktiske typen.
@@ -87,9 +113,25 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 ---
 
+# Unicode støtte
+
+```swift
+
+
+
+
+				   let 🌍 = "😩😛😵😘"
+```
+
+^Jada, du kan bruke emicons
+
+---
+
 # Strenger
 
 ```swift
+
+
 var variableString = "Bekk"
 variableString += " Consulting"
 // variableString er nå Bekk Consulting"
@@ -98,9 +140,20 @@ let constantString = "Bekk"
 constantString += " Consulting"
 // kompilatoren sier da: error - constantString cannot be changed
 
-// String Interpolation
-let number1 = 10, number2 = 8
-let mathString = "\(number1) ganger \(number2) er \(number1 * number2)"
+```
+
+---
+
+# String Interpolation
+
+```swift
+
+
+
+
+let n1 = 10, n2 = 8
+let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
+//10 ganger 8 er 80
 ```
 
 ^Strenger kan kombineres ved hjelp av streng interpolation. Der man også kan skrive matematiske utrykk.
@@ -111,6 +164,8 @@ let mathString = "\(number1) ganger \(number2) er \(number1 * number2)"
 # Collection types
 
 _Det finnes to typer collections i Swift_
+
+<br />
 
 * _Arrays_
 * _Dictionaries_
@@ -140,6 +195,7 @@ todo[2..<5] = ["Svein", "Gro", "Johanne"]
 ```
 
 ^ Et array deklareres på veldig standard måte, med to klammer. Uthenting er som vanlig.
+Forskjellig fra objective-c er at type inference gjør at disse er typed arrays
 Men ved modifisering har de blitt litt morsomme.
 Du bruker + for å legge til og på eksempelet i bunn så brukes noe de kaller Ranges, mer om det litt senere.
 
@@ -179,59 +235,23 @@ _Det finnes fire typer løkker_
 
 ---
 
-# while og do-while
-
-```swift
-while !complete {
-	println("Henter informasjon...")
-}
-
-var message = "Starter henting av informason"
-do {
-	println(message)
-	message = "Henter.."
-} while !complete
-```
-
-^ Ikke noe nytt i while og do-while, og dette er veldig kjent for de fleste.
-
----
-
-# for og for-in
-
-```swift
-for var i = 1; i < people.count; ++i {
-	println(people[i])
-}
-
-for person in people {
-	println(person)
-}
-```
-
-^ Samme her, ikke mye nytt. Man har for og for-in
-
----
-
 # Ranges
 
-
-* _1…10 – Går fra 1 til 10. Og er kjent som en closes range._
-* _1..<10 – Går fra 1 til 9. Og er kjent som en half-closed range_
-
 ```swift
-for number in 1...10 {
-	println("\(number) ganger 2 er \(number*2)")
+
+
+for nr in 1...10 {
+	println("\(nr) ganger 2 er \(nr*2)")
 }
 
-for number in 1..<10 {
-	println("\(number) ganger 2 er \(number*2)")
+for nr in 1..<10 {
+	println("\(nr) ganger 2 er \(nr*2)")
 }
 
 ```
 
-^ Ranges, viste vi tidligere om hvordan man kunne modifisere en array. Men de kan brukes til mye forskjellige.
-Prat om punktene og gå igjennom eksempel
+^_1…10 – Går fra 1 til 10. Og er kjent som en closed range._
+ _1..<10 – Går fra 1 til 9. Og er kjent som en half-closed range_
 
 ---
 
@@ -299,6 +319,48 @@ switch sender {
 
 ---
 
+# Optionals
+
+---
+
+```swift
+var possibleString: String? = "Hello"
+
+if possibleString == nil {
+	println("Could not print the string")
+} else {
+	let theString = possibleString! //unwrapping
+	println(theString)
+}
+
+^Greit å vite at typer som ikke er optinal kan ikke vœre nil.
+Da får man kompile error
+```
+
+---
+
+```swift
+if let theString = possibleString {
+		println(theString)
+}
+```
+
+^Automatisk unwrapping og sette verdien i en if
+
+---
+
+# Optional chaining
+
+```swift
+if let street = hansm.residence?.address?.street {
+		println("Hans Magnus bor i \(street).")
+} else {
+		println("Kunne ikke hente gatenavn")
+}
+```
+
+---
+
 # Funksjoner
 
 * _Deklareres med `func`_
@@ -310,6 +372,7 @@ switch sender {
 func printName() {
   println("Olga")
 }
+
 printName()
 ```
 
@@ -324,6 +387,7 @@ printName()
 func printName(name: String) {
   println(name)
 }
+
 printName("Olga")
 ```
 
@@ -343,21 +407,28 @@ printName(name: "Geir")
 # Funksjoner - Returverdi
 
 ```swift
+
+
+
 func buildName(firstName: String, lastName: String) -> String {
 	return "\(firstName) \(lastName)"
 }
-buildName("Olga", "Geiresen")
+
+let fullName = buildName("Olga", "Geiresen")
 ```
 ---
 
 # Funksjoner - Navngitte parametre
 
 ```swift
+
+
 func buildName(
     yourFirstName firstName: String,
     #lastName: String) -> String {
         return "\(firstName) \(lastName)"
 }
+
 buildName(yourFirstName: "Olga", lastName: "Geiresen")
 ```
 ---
@@ -365,9 +436,13 @@ buildName(yourFirstName: "Olga", lastName: "Geiresen")
 # Funksjoner - Tuple/Flere returverdier
 
 ```swift
+
+
+
 func refreshWebPage() -> (Int, String) {
   return (200, "success")
 }
+
 let (statusCode, message) = refreshWebPage()
 println("Fikk status \(statusCode): \(message)")
 ```
@@ -410,7 +485,8 @@ func addTwoInts(a: Int, b: Int) -> Int {
     return a + b
 }
 
-func printMathResult(mathFunction: (Int, Int) -> Int, a: Int, b: Int) {
+func printMathResult(mathFunction: (Int, Int) -> Int,
+	a: Int, b: Int) {
     println("Ble: \(mathFunction(a, b))")
 }
 
@@ -452,6 +528,8 @@ println(jump("")(2))
     statements
 }
 ```
+
+^ Samme som funksjoner, bare uten navn!
 
 ---
 
@@ -527,7 +605,10 @@ repeat(2) {
 
 # Klasser og Structs
 
-* _Klasser er Reference Types og Structs er Value Types_
+* _Klasser er Reference Types_
+* _Structs er Value Types_
+
+---
 
 ```swift
 struct Resolution {
@@ -543,14 +624,15 @@ class VideoMode {
 }
 ```
 
-^Et eksempel på stored properties
+^Slipper endelig .h filer, trenger ikke arve av NSObject
+Et eksempel på stored properties
 
 ---
 
 # Klasser og structures har mye til felles
 * _Definere properties_
 * _Definere metoder_
-* _Definere subscripts - Snarveier for å hente verdier_
+* _Definere subscripts (snarveier for å hente verdier)_
 * _Definere initializers for å sette opp state_
 * _Kan bruke extentions_
 * _Kan bruke protocols_
@@ -582,6 +664,9 @@ sameMode = mode
 sameMode.name = "En annen modus"
 // Både mode og sameMode sitt name er En annen modus
 ```
+
+^Legg merke til at man slipper alloc og eller new
+Man har også konstruktører og de heter init
 
 ---
 
@@ -690,22 +775,6 @@ struct SomeStruct {
 
 ---
 
-# muetating
-
-* For å modifisere properties på value types, så må man bruke mutating
-
-```swift
-struct Point {
-    var x = 0.0, y = 0.0
-    mutating func moveByX(deltaX: Double, y deltaY: Double) {
-        x += deltaX
-        y += deltaY
-    }
-}
-```
-
----
-
 # Arv
 
 * _Bruk final hvis du ikke ønsker at man skal kunne bruke override ved arv_
@@ -713,7 +782,7 @@ struct Point {
 ---
 
 ```swift
-class Train: Vehicle {
+class Car: Vehicle {
     override func makeNoise() {
         println("Wrom wrom")
     }
@@ -728,8 +797,6 @@ class Train: Vehicle {
           gear = Int(currentSpeed / 10.0) + 1
       }
   	}
-
-		final var color: UIColor;
 }
 ```
 
@@ -783,36 +850,7 @@ var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
 productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 ```
 
----
-
-# Optional og optional chaining
-
-* Gir compile error om man ikke har sjekker for nil først_
-
----
-```swift
-var optionalString: String? = "Hello"
-optionalString == nil // false
-
-optionalString! //unwrapping
-
-// Automatisk unwrapping og sette verdien i en if
-if let s = optionalString {
-    println(s)
-}
-```
-
----
-
-# Optional chaining
-
-```swift
-if let street = hansm.residence?.address?.street {
-    println("Hans Magnus bor i \(street).")
-} else {
-    println("Kunne ikke hente gatenavn")
-}
-```
+^Kan ha konstruktører, funksjoner, variabler
 
 ---
 
@@ -821,6 +859,8 @@ if let street = hansm.residence?.address?.street {
 * _Samme som interface i Java og andre språk_
 * _Definerer opp et sett med metoder, properties, klasse metoder, operatorer og subscripts som passer en bestemt funksjonalitet_
 * _Inneholder ingen implementasjonskode_
+
+---
 
 ```swift
 protocol SomeProtocol {
@@ -845,8 +885,8 @@ protocol SomeProtocol {
 ---
 
 ```swift
-extension SomeType {
-    // new functionality to add to SomeType goes here
+extension String {
+    // Legg til ny funksjonalitet på String
 }
 ```
 
@@ -914,19 +954,24 @@ if arguments.count != 1 {
 }
 
 let path = arguments[0]
-println("Finding wallpaper at path: " + path)
+println("Finding wallpaper at path: \(path)")
 
-var workspace = NSWorkspace.sharedWorkspace()
-var screen = NSScreen.mainScreen()
+let workspace = NSWorkspace.sharedWorkspace()
+let screen = NSScreen.mainScreen()
 
-var imgurl : NSURL = NSURL.fileURLWithPath(path)
+let potensialImgUrl : NSURL? = NSURL.fileURLWithPath(path)
 var error : NSError?
-var result : Bool = workspace.setDesktopImageURL(imgurl, forScreen: screen, options: nil, error: &error)
 
-if result {
-    println("Wallpaper set!")
+if let imageUrl = potensialImgUrl {
+    let result : Bool = workspace.setDesktopImageURL(imageUrl, forScreen: screen, options: nil, error: &error)
+
+    if result {
+        println("Wallpaper set!")
+    } else {
+        println("Failed setting wallpaper")
+    }
 } else {
-    println("Failed setting wallpaper")
+    println("There is something wrong with the path: \(path)")
 }
 ```
 
@@ -943,3 +988,11 @@ if result {
 # [fit] Gira?
 # [fit] Stikk å programer Swift
 # [fit] _**Lykke til!**_
+
+---
+
+# Ressurser
+
+1. https://developer.apple.com/videos/wwdc/2014/
+2. https://developer.apple.com/swift/
+3.
