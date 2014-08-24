@@ -909,6 +909,7 @@ productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 
 # Protocols
 
+* _Ganske likt Objective-C, brukes fortsatt til delegate pattern_
 * _Samme som interface i Java og andre språk_
 * _Definerer opp et sett med metoder, properties, klasse metoder, operatorer og subscripts som passer en bestemt funksjonalitet_
 * _Inneholder ingen implementasjonskode_
@@ -917,6 +918,12 @@ productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 
 ```swift
 protocol Firm {
+	var mustBeSettable: Int { get set }
+	var doesNotNeedToBeSettable: Int { get }
+
+
+	class func someTypeMethod()
+	func random() -> Double
 }
 ```
 
@@ -933,7 +940,7 @@ protocol Firm {
 * _Nye init metoder_
 * _Nye subscripts_
 * _Definere ny nestet type_
-* _Gjøre slik at en eksiterende type conforms til en protocol_
+* _Gir mulighet for en eksiterende type å implementere en protocol_
 
 ---
 
