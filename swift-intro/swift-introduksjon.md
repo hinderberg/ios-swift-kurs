@@ -5,7 +5,7 @@
 ---
 
 ### Hans Magnus Inderberg
-#### BEKK, SpareBank 1 Mobilbank
+#### Prosjekt: SpareBank 1 Mobilbank
 #### Fagleder Mobil
 #### _@hinderberg_
 
@@ -45,8 +45,8 @@
 
 # Agenda
 
-1. _Hva er swift og hvordan ser det ut?_
-2. _Lettvekt og syntax_
+1. _Hva er swift?_
+2. _Hvordan ser det ut?_
 3. _Litt mer avansert_
 2. _Playground_
 3. _REPL_
@@ -54,10 +54,11 @@
 ---
 
 # Hva er Swift?
-* _Et programmeringsspråk laget av Apple_
-* _Fokus på Enkelhet_
-* _Sikkerhet, moderne og kraf_
-* _Fungerer side-om-side med Objetice-C_
+* _Et programmeringsspråk for iOS og OSX laget av Apple_
+* _De har fjernet C avhengigheten og Swift tar over for Objective-C_
+* _Fokus på Enkelhet og sikkerhet_
+* _Moderne og kraftig_
+* _Fungerer side-om-side med C og Objetice-C_
 * _Paradigmer som imperativ, OOP og funksjonelt_  
 
 ^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
@@ -73,17 +74,23 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 
 ---
 
-# Variabler og konstanter
+```swift
+			   println("Hei hei BEKK")
+```
+
+---
+
+# Konstanter og Variabler
 
 ```swift
 
 
 
+let shortName: String = "BEKK"
+
+
 var numberOfemployees: Int = 320
 numberOfemployees = 500
-
-
-let shortName: String = "BEKK"
 ```
 
 ^ Konstanter deklareres med LET og variabler med VAR
@@ -115,6 +122,8 @@ Det vil si at om du ikke spesifiserer typen, så vil det analysere output av det
 ^Men om du setter typen, så vi den typen overskrive den faktiske typen.
 For eksempel hvis du setter en Double til å vœre Float.
 
+^Verdier vil aldri automatisk skifte type, så om du skal legge sammen er string og int, så må du eksplisitt konvertere en av dem.
+
 ---
 
 # Unicode støtte
@@ -132,7 +141,7 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 ---
 
-# Strenger
+# Feilmeldinger
 
 ```swift
 
@@ -184,6 +193,7 @@ _Det finnes to typer collections i Swift_
 
 ```swift
 // Deklaring, merk ingen spesifisering av type
+let jobs = [String]()
 
 var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
 
@@ -212,7 +222,7 @@ jobs[2..<5] = ["Rådgiver", "Backend-Utvikler", "Prosjektleder"]
 
 ```swift
 // Deklaring
-
+let emptyDictionary = [String: Float]()
 var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
 
 // Uthenting
@@ -263,6 +273,7 @@ for nr in 1..<10 {
 ---
 
 # Control flow
+<br />
 
 * _if_
 * _switch_
@@ -271,7 +282,7 @@ for nr in 1..<10 {
 
 # if
 
-* _Ikke noe nytt, paranters er optional_
+* _Ikke noe nytt, paranteser er optional_
 
 ```swift
 if age <= 10 {
@@ -287,7 +298,7 @@ if age <= 10 {
 
 # switch
 
-_Her har de gått banans_
+_Her har de gått banans_ ;-)
 
 * _Du trenger ikke bruke break etter hver case_
 * _Bruk hvilke som helst object i en switch_
@@ -360,6 +371,9 @@ if let welcomeMessage = possibleWelcomeMessage {
 # Optional chaining
 
 ```swift
+
+
+
 if let street = bekk.people.first?.address?.street {
     println("Personen bor i \(street).")
 } else {
@@ -370,6 +384,7 @@ if let street = bekk.people.first?.address?.street {
 ---
 
 # Funksjoner
+<br />
 
 * _Deklareres med `func`_
 * _Returtypen defineres til slutt_
@@ -412,7 +427,7 @@ printName(name: "Geir")
 ```
 ---
 
-# Funksjoner - Returverdi
+# Funksjoner med returverdi
 
 ```swift
 
@@ -426,7 +441,7 @@ let fullName = buildName("Olga", "Geiresen")
 ```
 ---
 
-# Funksjoner - Navngitte parametre
+# Funksjoner med navngitte parametre
 
 ```swift
 
@@ -441,10 +456,9 @@ buildName(yourFirstName: "Olga", lastName: "Geiresen")
 ```
 ---
 
-# Funksjoner - Tuple/Flere returverdier
+# Funksjoner med tuple/flerereturverdier
 
 ```swift
-
 
 
 func refreshWebPage() -> (Int, String) {
@@ -470,7 +484,7 @@ println("Fikk status \(status.code): \(status.message)")
 ```
 ---
 
-# Funksjoner - Med x antall av samme type
+# Funksjoner med x antall av samme type
 
 ```swift
 func total(numbers: Double...) -> Double {
@@ -486,7 +500,7 @@ total(1, 2, 3, 4, 5)
 
 ---
 
-# Funksjoner - som parametre
+# Funksjoner som parametre
 
 ```swift
 func addTwoInts(a: Int, b: Int) -> Int {
@@ -532,9 +546,13 @@ println(jump("")(2))
 # Closures
 
 ```swift
-{ (parameters) -> return type in
+
+
+
+{ (parameters) -> returnType in
     statements
 }
+
 ```
 
 ^ Samme som funksjoner, bare uten navn!
@@ -603,7 +621,12 @@ repeat(2, {
 ---
 
 # Trailing closure
+
 ```swift
+
+
+
+
 repeat(2) {
   println("BEKK!")
 }
@@ -612,23 +635,25 @@ repeat(2) {
 ---
 
 # Klasser og Structs
+<br />
 
-* _Klasser er Reference Types_
-* _Structs er Value Types_
+* _Klasser = Reference Types_
+* _Structs = Value Types_
+
+^ Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
+Reference types øker bare antall pekere til det samme objektet.
 
 ---
 
 ```swift
-struct Resolution {
-    var width = 0
-    var height = 0
+struct Position {
+    let latitude: Float
+    let longitude: Float
 }
 
-class VideoMode {
-    var resolution = Resolution()
-    var interlaced = false
-    var frameRate = 0.0
-    var name: String?
+class Address {
+    let position: Position?
+    var street: String?
 }
 ```
 
@@ -654,23 +679,22 @@ Et eksempel på stored properties
 * _`deinitializers` for opprydding når instansen blir kastet_
 * _Referanse telling - mer enn en referanse til en klasseinstans_
 
-^ Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
-Reference types øker bare antall pekere til det samme objektet.
-
 ---
 
 # Eksempel
 
 ```swift
-let hd = Resolution(width: 1920, height: 1080)
-var cinema = hd
-cinema.width = 1400
-// her blir ikke hd endret
 
-var mode = VideMode(name: "Kul modues")
-sameMode = mode
-sameMode.name = "En annen modus"
-// Både mode og sameMode sitt name er En annen modus
+
+let positionX = Position(latitude: 59.903933, longitude: 10.739286)
+var positionY = positionX
+positionY.latitude = 60.233333
+// her blir ikke positionX endret
+
+var address = Address(street: "Akershusstranda 21")
+var address2 = address
+address2.street = "Sluppenveien 17A"
+// Både address og address2 sin addresse blir endret
 ```
 
 ^Legg merke til at man slipper alloc og eller new
@@ -691,12 +715,15 @@ Eksempel: _String, Array og Dictionary er structs_
 
 # Access Control
 
-* _Access Control på klasser, structs, metoder, properties, etc._
+_Access Control på blant annet:
+klasser, structs, metoder og properties._
 
 ```swift
-public class SomePublicClass {}
-internal class SomeInternalClass {}
-private class SomePrivateClass {}
+
+
+public class Address {}
+internal class Address {}
+private class Address {}
 ```
 
 ^ Ligner veldig på for eksempel Java
@@ -706,18 +733,17 @@ private class SomePrivateClass {}
 # Kalkulerte properties
 
 ```swift
-struct Rect {
-    var origin = Point()
-    var size = Size()
-    var center: Point {
+class Employee {
+    var address: Address?
+    var salary: Double = 100000
+    var bonusPercent = 0.20
+
+    var bonus: Double {
         get {
-            let centerX = origin.x + (size.width / 2)
-            let centerY = origin.y + (size.height / 2)
-            return Point(x: centerX, y: centerY)
+            return self.salary * bonusPercent;
         }
-        set(newCenter) { // må ikke ta inn noe, da kan man bruke newValue i stedet
-            origin.x = newCenter.x - (size.width / 2)
-            origin.y = newCenter.y - (size.height / 2)
+        set(newBonus) { // må ikke ta inn noe, da kan man bruke newValue i stedet
+            self.bonusPercent = newBonus
         }
     }
 }
@@ -728,11 +754,14 @@ struct Rect {
 # READ-only
 
 ```swift
-struct Cuboid {
-    var width = 0.0, height = 0.0, depth = 0.0
-    var volume: Double {
-        return width * height * depth
-    }
+class Employee {
+		var address: Address?
+		var salary: Double = 100000
+		var bonusPercent = 0.20
+
+		var bonus: Double {
+			return self.salary * bonusPercent;
+		}
 }
 ```
 
@@ -741,52 +770,67 @@ struct Cuboid {
 # Obseravble properties
 
 ```swift
-class StepCounter {
-    var totalSteps: Int = 0 {
-        willSet(newTotalSteps) {
-            println("I ferd med å sette totalSteps til \(newTotalSteps)")
+class Employee {
+    var address: Address?
+    var salary: Double = 100000
+    var bonusPercent = 0.20
+    var invoicing: Double = 100.00 {
+        willSet(newInvoicing) {
+            println("I ferd med å ny faktueringsgrad \(newInvoicing)")
         }
         didSet {
-            if totalSteps > oldValue  {
-                println("La til \(totalSteps - oldValue) steg")
+            if invoicing > oldValue  {
+                println("Bedret faktueringsgrad med \(invoicing - oldValue) steg")
             }
         }
     }
-}
-```
-
----
-
-# Metoder
-
-```swift
-class Counter {
-    var count = 0
-    func increment() {
-        count++
-    }
-    func incrementBy(amount: Int) {
-        count += amount
-    }
-    func reset() {
-        count = 0
+    var bonus: Double {
+        get {
+            return self.salary * bonusPercent;
+        }
+        set(newBonus) { // må ikke ta inn noe, da kan man bruke newValue i stedet
+            self.bonusPercent = newBonus
+        }
     }
 }
 ```
 
 ---
 
-# class, static
+```swift
+var invoicing: Double = 100.00 {
+	willSet(newInvoicing) {
+		println("I ferd med å ny faktueringsgrad \(newInvoicing)")
+	}
+	didSet {
+		if invoicing > oldValue  {
+			println("Bedret faktueringsgrad med \(invoicing - oldValue) steg")
+		}
+	}
+}
+```
+
+---
+
+# Metoder sier du?
+<br /><br /><br />
+
+
+_Fungerer likt som funksjoner_
+
+---
+
+# Klassemetoder
 
 ```swift
-class SomeClass {
-    class func someTypeMethod() {
+class Address {
+    class func someMethod() {
 
     }
 }
 
-struct SomeStruct {
-    static func someTypeMethod() {
+struct Position {
+    static func someMethod() {
 
     }
 }
@@ -796,43 +840,44 @@ struct SomeStruct {
 
 # Arv
 
-* _Bruk final hvis du ikke ønsker at man skal kunne bruke override ved arv_
-
 ---
 
 ```swift
-class Car: Vehicle {
-    override func makeNoise() {
-        println("Wrom wrom")
+class Employee: Human {
+    var firm = "Bekk Consulting"
+
+    override func scream() {
+        println("Waaaaaaaaaaa")
     }
 
-    var gear = 1
     override var description: String {
-        return super.description + " er i gir \(gear)"
+        return super.description + " er ansatt i \(firm)"
     }
 
-    override var currentSpeed: Double {
+    override var confidence: Double {
       didSet {
-          gear = Int(currentSpeed / 10.0) + 1
+          confidence = confidence * 200
       }
   	}
 }
 ```
+
+^Bruk final hvis du ikke ønsker at man skal kunne bruke override ved arv_
 
 ---
 
 # Enums
 
 ```swift
-enum CompassPoint {
-    case North
-    case South
-    case East
-    case West
+enum Level {
+	case Consultant
+	case Senior
+	case Manager
 }
 
-enum Planet {
-    case Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+// eller
+enum Level {
+	case Consultant, Senior, Manager
 }
 
 ```
@@ -871,7 +916,7 @@ productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 ---
 
 ```swift
-protocol SomeProtocol {
+protocol Firm {
 }
 ```
 
@@ -894,8 +939,12 @@ protocol SomeProtocol {
 
 ```swift
 extension String {
-    // Legg til ny funksjonalitet på String
+	var uppercase: String { return self.uppercaseString }
 }
+
+var name = "Hans Magnus"
+name.uppercase // "HANS MAGNUS"
+
 ```
 
 ---
@@ -908,19 +957,15 @@ extension String {
 ---
 
 ```swift
-func swapTwoValues<T>(inout a: T, inout b: T) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
+func printSequence<T: SequenceType>(sequence: T) {
+    for part in sequence {
+        println(part)
+    }
 }
 
-var someInt = 3
-var anotherInt = 107
-swapTwoValues(&someInt, &anotherInt)
-
-var someString = "hello"
-var anotherString = "world"
-swapTwoValues(&someString, &anotherString)
+printSequence("ABCDEF")
+printSequence(["Aa", "Bb"])
+printSequence(["A": "B", "B": "A"])
 ```
 
 ---
@@ -944,6 +989,14 @@ swapTwoValues(&someString, &anotherString)
 
 ###### _read–eval–print loop støtte_
 ###### _Startes med ```xcrun swift```_
+
+---
+
+# For å kjøre Swift i terminalen
+## må man sette nyeste xcode med
+## _`xcode-select`_
+
+_xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer_
 
 ---
 
@@ -1000,6 +1053,16 @@ if let imageUrl = potensialImgUrl {
 ---
 
 # Ressurser
+
+---
+
+![150%](swift-book.png)
+
+---
+
+![fit](swift_blog.jpg)
+
+---
 
 1. _https://developer.apple.com/videos/wwdc/2014/_
 2. _https://developer.apple.com/swift/_
