@@ -192,13 +192,13 @@ _Det finnes to typer collections i Swift_
 # Array
 
 ```swift
-// Deklaring, merk ingen spesifisering av type
+// Deklaring
 let jobs = [String]()
 
+// merk ingen spesifisering av type
 var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
 
 // Uthenting
-
 jobs[0]
 ```
 
@@ -226,11 +226,9 @@ let emptyDictionary = [String: Float]()
 var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
 
 // Uthenting
-
 jobs["Systemutvikler"]
 
 // Modifisering
-
 people["Rådgiver"] = 45
 people["Prosjektleder"] = 81
 ```
@@ -282,7 +280,7 @@ for nr in 1..<10 {
 
 # if
 
-* _Ikke noe nytt, paranteser er optional_
+* _Ikke noe nytt, paranteser er valgfritt_
 
 ```swift
 if age <= 10 {
@@ -302,8 +300,7 @@ _Her har de gått banans_ ;-)
 
 * _Du trenger ikke bruke break etter hver case_
 * _Bruk hvilke som helst object i en switch_
-* _switch'ene må matche alle case, hvis du utelater default case,
-hvis ikke blir det compile error_
+* _Hvis du utelater default case må switch'ene matche alle case, hvis ikke blir det_ compile error
 
 ---
 
@@ -560,26 +557,26 @@ println(jump("")(2))
 ---
 
 ```swift
+// Closure inn til den innbygde sorteringsfunksjonen
+
 reversed = sorted(names, { (s1: String, s2: String) -> Bool in
     return s1 > s2
 })
 ```
----
-
-# Closures på speed
 
 ---
 
 ```swift
-// Type inference
+// Med type inference
 
 reversed = sorted(names, { s1, s2 in return s1 > s2 } )
 ```
+^ Closures på speed
 
 ---
 
 ```swift
-// Implicit Returns from Single-Expression Closures
+// Implisitt retur når man har en single-expression closure
 
 reversed = sorted(names, { s1, s2 in s1 > s2 } )
 ```
@@ -587,7 +584,7 @@ reversed = sorted(names, { s1, s2 in s1 > s2 } )
 ---
 
 ```swift
-// Shorthand arguments names
+// Snarvei for argumentnavn
 
 reversed = sorted(names, { $0 > $1 }
 ```
