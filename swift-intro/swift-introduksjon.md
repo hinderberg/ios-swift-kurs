@@ -556,62 +556,17 @@ println(jump("")(2))
 
 ---
 
-```swift
-// Closure inn til den innbygde sorteringsfunksjonen
-
-reversed = sorted(names, { (s1: String, s2: String) -> Bool in
-    return s1 > s2
-})
-```
-
----
-
-```swift
-// Med type inference
-
-reversed = sorted(names, { s1, s2 in return s1 > s2 } )
-```
-^ Closures på speed
-
----
-
-```swift
-// Implisitt retur når man har en single-expression closure
-
-reversed = sorted(names, { s1, s2 in s1 > s2 } )
-```
-
----
-
-```swift
-// Snarvei for argumentnavn
-
-reversed = sorted(names, { $0 > $1 }
-```
-
----
-
-```swift
-/*
-Swift’s String type definerer sin
-spesifikke implementasjon av > operatoren som en funksjon
-som har to paramerte av typen string og returnerer Bool
-*/
-reversed = sorted(names, >)
-```
----
-
 # Closures som parametre
 
 ```swift
 func repeat(count: Int, task: () -> ()) {
-  for i in 0..<count {
-    task()
-  }
+	for i in 0..<count {
+		task()
+	}
 }
 
 repeat(2, {
-  println("BEKK!")
+	println("BEKK!")
 })
 ```
 
@@ -625,8 +580,63 @@ repeat(2, {
 
 
 repeat(2) {
-  println("BEKK!")
+	println("BEKK!")
 }
+```
+
+---
+
+```swift
+// Closure inn til den innbygde sorteringsfunksjonen
+
+reversed = sorted(names, { (s1: String, s2: String) -> Bool in
+    return s1 > s2
+})
+```
+
+---
+
+```swift
+// Med type inference
+
+
+
+
+reversed = sorted(names, { s1, s2 in return s1 > s2 } )
+```
+^ Closures på speed
+
+---
+
+```swift
+/* Implisitt retur når man
+har en single-expression closure */
+
+
+
+reversed = sorted(names, { s1, s2 in s1 > s2 } )
+```
+
+---
+
+```swift
+// Snarvei for argumentnavn
+
+
+
+
+reversed = sorted(names, { $0 > $1 }
+```
+
+---
+
+```swift
+/*
+Swift’s String type definerer sin spesifikke
+implementasjon av > operatoren som en funksjon som
+har to paramerte av typen string og returnerer Bool
+*/
+reversed = sorted(names, >)
 ```
 
 ---
@@ -663,9 +673,9 @@ Et eksempel på stored properties
 * _Definere properties_
 * _Definere metoder_
 * _Definere subscripts (snarveier for å hente verdier)_
-* _Definere initializers for å sette opp state_
-* _Kan bruke extentions_
-* _Kan bruke protocols_
+* _Definere kontruktører_
+* _Kan bli utvided med extentions_
+* _Kan implementere protocols_
 
 ---
 
@@ -937,7 +947,7 @@ protocol Firm {
 * _Nye init metoder_
 * _Nye subscripts_
 * _Definere ny nestet type_
-* _Gir mulighet for en eksiterende type å implementere en protocol_
+* _Gir mulighet å implementere en protocol for en eksiterende type_
 
 ---
 
