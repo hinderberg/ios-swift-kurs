@@ -5,7 +5,7 @@
 ---
 
 ### Hans Magnus Inderberg
-#### Prosjekt: SpareBank 1 Mobilbank
+#### SpareBank 1 Mobilbank
 #### Fagleder Mobil
 #### _@hinderberg_
 
