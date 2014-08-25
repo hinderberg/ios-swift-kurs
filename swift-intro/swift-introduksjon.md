@@ -981,10 +981,16 @@ printSequence(["A": "B", "B": "A"])
 
 * _Ligner på Scala Workspaces or F# interactive mode_
 * _Kjører kode forløpende_
-* _Tidslinje som skriver ut alt som skjer i en prosess_
-* _Eksempelvis loops, komposisjon av views eller animert SpriteKit scene_
+* _Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug_
 
-^ Ny algoritme, nye tester, utforske apier, rette en bestemt bug
+---
+
+_Tidslinje som skriver ut alt som skjer i en prosess_
+_Eksempelvis:_
+
+* _Loops_
+* _Komposisjon av views_
+* _Animert SpriteKit scene_
 
 ---
 
