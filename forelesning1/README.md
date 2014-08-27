@@ -49,39 +49,7 @@ Todo
 
 ---
 
----
-
 # Swift
-
-![](wwdc.png)
-
-^ Under utviklerkonferansen WWDC i starten av Juni, lanserte Apple ganske så uventet et nytt programmeringsspråk kalt Swift.
-
----
-
-![](swift-logo-hero.jpg)
-
-^ kalt Swift.
-
-^Et nytt programmeringsspråk for iOS og OS X
-
----
-
-## Som førte til reaksjoner som dette
-
-![fit inline](tweet-trash.png)
-
----
-
-## og dette
-
-![100% inline](tweet-mattt.png)
-
----
-
-#### _Som igjen førte til_
-
-## Introduksjon til Swift
 
 ---
 
@@ -107,7 +75,7 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 ---
 
 ```swift
-			   println("Hei hei BEKK")
+			   println("Hello fellow coder!")
 ```
 
 ---
@@ -115,7 +83,7 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 # Konstanter og Variabler
 
 ```swift
-let shortName: String = "BEKK"
+let shortName: String = "NITH"
 
 
 var numberOfemployees: Int = 320
@@ -135,7 +103,7 @@ var numberOfemployees = 350
 numberOfemployees = 500
 
 
-let shortName = "BEKK"
+let shortName = "NITH"
 ```
 
 ^Type interence er et stort fokus punkt i Swift.
@@ -156,22 +124,11 @@ For eksempel hvis du setter en Double til å vœre Float.
 ```swift
 let subject = "iOS programmering"
 println("\(countElements(subject)) tegn")
+if(subject == "iOS programmering") {
+    println("😘 " + subject)
+}
 ```
-
-* TODO: compare
-
----
-
-# Unicode støtte
-
-```swift
-
-
-
-                   let 🌍 = "😩😛😵😘"
-```
-
-^Jada, du kan bruke emoticons
+Og ja, du kan bruke emoticons 😛
 
 ---
 
@@ -190,37 +147,37 @@ let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
 
 # Numbers
 
-* TODO
+```swift
+let heltall = 30 // Int32 / Int64 avhengig av plattform
+let heltall2 : Int = 25
+let desimaltall = 30.45
+let desimaltall2 : Float = 30.456 // 32 bit presisjon
+let desimaltall3 : Double = 30.456 // 64 bit presisjon
+```
 
 ---
 
 # Tuples
 
-* TODO: skriv om til å være uten funksjoner
+Grupperer flere verdier inn i en verdi. Godt egnet i funksjoner som skal returnere flere verdier - ikke så godt for komplekse datastrukturer.
 
 ```swift
+let (x, y) = (50, 300)
 
+let error = (455, "Login unavailable")
+println(error.1) // Login unavailable
 
-func refreshWebPage() -> (Int, String) {
-  return (200, "success")
-}
-
-let (statusCode, message) = refreshWebPage()
-println("Fikk status \(statusCode): \(message)")
+let (statusCode, message) = error
+println(statusCode) // 455
 ```
 
 ---
 
 ```swift
 
-// Navngi felter i tuple returverdi
-
-func refreshWebPage() -> (code: Int, message: String) {
-  return (200, "success")
-}
-
-let status = refreshWebPage()
-println("Fikk status \(status.code): \(status.message)")
+// Navngitte felter i tupler
+let error = (code: 455, message: "Login unavailable")
+println(error.message) // Login unavailable
 ```
 
 ---
@@ -241,7 +198,7 @@ if possibleWelcomeMessage == nil {
 }
 ```
 
-^Greit å vite at typer som ikke er optinal kan ikke vœre nil.
+^Greit å vite at typer som ikke er optional ikke kan vœre nil.
 Da får man kompile error
 
 ---
@@ -253,6 +210,26 @@ if let welcomeMessage = possibleWelcomeMessage {
 ```
 
 ^Automatisk unwrapping og sette verdien i en if
+
+---
+
+# Ranges
+
+```swift
+
+for nr in 1...10 { // 1 t.o.m. 10
+    println("\(nr) ganger 2 er \(nr*2)")
+}
+
+for nr in 1..<10 { // 1 t.o.m. 9
+    println("\(nr) ganger 2 er \(nr*2)")
+}
+
+```
+
+^_1…10 – Går fra 1 til 10. Og er kjent som en closed range._
+ _1..<10 – Går fra 1 til 9. Og er kjent som en half-closed range_
+
 
 ---
 
@@ -281,6 +258,11 @@ var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
 
 // Uthenting
 jobs[0]
+
+// Iterering
+for job in jobs {
+    println(job)
+}
 ```
 
 ^ Et array deklareres på veldig standard måte, med to klammer. Uthenting er som vanlig.
@@ -309,6 +291,10 @@ var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
 // Uthenting
 jobs["Systemutvikler"]
 
+for (name, count) in jobs {
+    println("\(name): \(count)")
+}
+
 // Modifisering
 people["Rådgiver"] = 45
 people["Prosjektleder"] = 81
@@ -331,26 +317,6 @@ _Det finnes fire typer løkker_
 
 ---
 
-# Ranges
-
-```swift
-
-
-for nr in 1...10 {
-	println("\(nr) ganger 2 er \(nr*2)")
-}
-
-for nr in 1..<10 {
-	println("\(nr) ganger 2 er \(nr*2)")
-}
-
-```
-
-^_1…10 – Går fra 1 til 10. Og er kjent som en closed range._
- _1..<10 – Går fra 1 til 9. Og er kjent som en half-closed range_
-
----
-
 # Control flow
 <br />
 
@@ -361,7 +327,7 @@ for nr in 1..<10 {
 
 # if
 
-* _Ikke noe nytt, paranteser er valgfritt_
+* _Ikke noe nytt, parenteser er valgfritt_
 
 ```swift
 if age <= 10 {
@@ -415,50 +381,8 @@ switch sender {
 
 ---
 
-# Enums
-
-```swift
-enum Level {
-	case Consultant
-	case Senior
-	case Manager
-}
-
-// eller
-enum Level {
-	case Consultant, Senior, Manager
-}
-
-```
-
----
-
-# Enums Raw og Associated verdier
-
-```swift
-// Enumeration Raw Values
-enum ASCIIControlCharacter: Character {
-    case Tab = "\t"
-    case LineFeed = "\n"
-    case CarriageReturn = "\r"
-}
-
-// Enumeration Associated Values
-enum Barcode {
-    case UPCA(Int, Int, Int, Int)
-    case QRCode(String)
-}
-var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
-productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
-```
-
-^Kan ha konstruktører, funksjoner, variabler
-
----
-
 # Playground
 
-* _Ligner på Scala Workspaces or F# interactive mode_
 * _Kjører kode forløpende_
 * _Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug_
 
@@ -480,6 +404,7 @@ productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 ## _`xcode-select`_
 
 _xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer_
+
 
 ---
 
