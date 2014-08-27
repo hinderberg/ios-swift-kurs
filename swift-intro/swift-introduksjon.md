@@ -457,6 +457,8 @@ buildName(yourFirstName: "Olga", lastName: "Geiresen")
 
 # Funksjoner med tuple/flerereturverdier
 
+_Grupperer flere verdier inn i en verdi. Godt egnet i funksjoner som skal returnere flere verdier - ikke så godt for komplekse datastrukturer._
+
 ```swift
 
 
@@ -1009,8 +1011,9 @@ _Eksempelvis:_
 
 # REPL
 
-###### _read–eval–print loop støtte_
-###### _Startes med ```xcrun swift```_
+###### _Apple har laget read–eval–print loop_
+###### _Tilgjengelig både når man debugger og i terminalen_
+###### _Startes med ```xcrun swift``` i terminalen_
 
 ---
 
