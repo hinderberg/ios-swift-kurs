@@ -315,6 +315,8 @@ default:
 }
 ```
 
+^regulœre utrykk
+
 ---
 
 # Du kan switche på instanser
@@ -1067,7 +1069,6 @@ if let imageUrl = potensialImgUrl {
 ---
 
 # [fit] Gira?
-# [fit] Stikk å programer Swift
 # [fit] _**Lykke til!**_
 
 ---
