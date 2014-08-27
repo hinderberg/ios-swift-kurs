@@ -33,19 +33,23 @@
 
 # Kort intro til til OSX
 
-Todo
+DEMO
 
 ---
 
 # iOS økosystem
 
-Todo
+* Portal: _developer.apple.com_
+* Enheter: _iPhone, iPad_
+* Plattform: _iOS / Cocoa Touch / Objective-C/Swift_
+* Utviklingsverktøy: _XCode, Instruments, Bots_
+* Distribusjon: _App Store, iTunes Connect_
 
 ---
 
 # XCode
 
-Todo
+## DEMO
 
 ---
 
@@ -410,4 +414,4 @@ _xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer
 
 # Oppgaver
 
-Se [Øvingsoppgavene](oppgaver1.md)
+## Se [Øvingsoppgavene](oppgaver1.md)
