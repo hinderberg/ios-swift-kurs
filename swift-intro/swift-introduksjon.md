@@ -166,7 +166,7 @@ _Det finnes to typer collections i Swift_
 * _Dictionaries_
 
 
-^ De vanlige typene finnes også i Swift
+^ De vanlige typene finnes også i Swift. Map i java
 
 ---
 
@@ -323,6 +323,9 @@ switch sender {
 
 # Optionals
 
+
+^ Rammverk, mange måter i objective-c
+
 ---
 
 ```swift
@@ -470,7 +473,7 @@ println("Fikk status \(status.code): \(status.message)")
 ```
 ---
 
-# Funksjoner med x antall av samme type
+# Funksjoner med x antall av samme type param
 
 ```swift
 func total(numbers: Double...) -> Double {
