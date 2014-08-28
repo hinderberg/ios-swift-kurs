@@ -135,7 +135,7 @@ Som skriver ut
 
 Denne oppgaven er ekstra utfordrende og må løses utenfor playground. I terminalen, kjør først:
 
-	xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer
+	xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developer
 
 Slik at du kan kjøre swift fra kommandolinjen.
 
