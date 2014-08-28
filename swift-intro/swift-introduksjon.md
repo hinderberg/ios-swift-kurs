@@ -47,7 +47,6 @@
 
 1. _Hva er swift?_
 2. _Hvordan ser det ut?_
-3. _Litt mer avansert_
 2. _Playground_
 3. _REPL_
 
@@ -56,8 +55,7 @@
 # Hva er Swift?
 * _Et programmeringsspråk for iOS og OSX laget av Apple_
 * _De har fjernet C avhengigheten og Swift tar over for Objective-C_
-* _Fokus på Enkelhet og sikkerhet_
-* _Moderne og kraftig_
+* _Fokus på Enkelhet og sikkerhet. Moderne og kraftig_
 * _Fungerer side-om-side med C og Objetice-C_
 * _Paradigmer som imperativ, OOP og funksjonelt_  
 
@@ -105,11 +103,11 @@ Dette vil blant annet gjøre det enklere i multi-treding og enklere for kompiler
 
 
 
+let shortName = "BEKK"
+
+
 var numberOfemployees = 350
 numberOfemployees = 500
-
-
-let shortName = "BEKK"
 ```
 
 
@@ -138,23 +136,6 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 
 ^Jada, du kan bruke emicons
-
----
-
-# Feilmeldinger
-
-```swift
-
-
-var fullName = "Bekk"
-fullName += " Consulting"
-// variableString er nå Bekk Consulting"
-
-let fullName = "Bekk"
-fullName += " Consulting"
-// error - constantString cannot be changed
-
-```
 
 ---
 
@@ -280,7 +261,7 @@ for nr in 1..<10 {
 
 # if
 
-* _Ikke noe nytt, paranteser er valgfritt_
+* _Ikke noe nytt, du har kanskje sett at paranteser er valgfritt_
 
 ```swift
 if age <= 10 {
@@ -333,6 +314,10 @@ switch sender {
 ```
 
 ^ Man kan også switche på instanster av forskjellige typer.
+
+---
+
+++++
 
 ---
 
@@ -990,18 +975,9 @@ printSequence(["A": "B", "B": "A"])
 
 # Playground
 
-* _Ligner på Scala Workspaces or F# interactive mode_
+* _Ligner på Scala Workspaces og F# interactive mode_
 * _Kjører kode forløpende_
 * _Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug_
-
----
-
-_Tidslinje som skriver ut alt som skjer i en prosess_
-_Eksempelvis:_
-
-* _Loops_
-* _Komposisjon av views_
-* _Animert SpriteKit scene_
 
 ---
 
@@ -1073,20 +1049,4 @@ if let imageUrl = potensialImgUrl {
 
 # [fit] Gira?
 # [fit] _**Lykke til!**_
-
----
-
-# Ressurser
-
----
-
-![150%](swift-book.png)
-
----
-
-![fit](swift_blog.jpg)
-
----
-
-1. _https://developer.apple.com/videos/wwdc/2014/_
-2. _https://developer.apple.com/swift/_
+##### _https://developer.apple.com/swift/_
