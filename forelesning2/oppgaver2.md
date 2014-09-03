@@ -1,5 +1,7 @@
 # Øvingsoppgaver forelesning 2
 
+Oppgavene løses som tidligere i playground.
+
 Tips: en del av Swift er fortsatt dårlig dokumentert. [Denne listen](http://practicalswift.com/2014/06/14/the-swift-standard-library-list-of-built-in-functions/) med funksjoner på toppnivå kan være til hjelp i oppgaveløsningen
 
 ## Oppgave 1
