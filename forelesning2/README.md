@@ -76,11 +76,11 @@ println(error().message)
 # Funksjoner med parametere
 
 ```swift
-func salute(prefix: String, name: String) {
+func greet(prefix: String, name: String) {
     println("Hello, \(prefix) \(name)!")
 }
 
-salute("Mr", "Anderson")
+greet("Mr", "Anderson")
 ```
 
 ---
@@ -90,12 +90,12 @@ salute("Mr", "Anderson")
 Defaultparamtere til slutt:
 
 ```swift
-func salute(name: String, prefix: String = "") {
+func greet(name: String, prefix: String = "") {
     println("Hello, \(prefix) \(name)!")
 }
 
-salute("Anderson")
-salute("Anderson", prefix: "Mr")
+greet("Anderson")
+greet("Anderson", prefix: "Mr")
 ```
 
 ---
@@ -106,12 +106,12 @@ Som regel ikke å anbefale pga. lesbarhet, men greit å kjenne til
 
 ```swift
 // Merk _ foran prefix:
-func salute(name: String, _ prefix: String = "") {
+func greet(name: String, _ prefix: String = "") {
     println("Hello, \(prefix) \(name)!")
 }
 
-salute("Anderson")
-salute("Anderson", "Mr")
+greet("Anderson")
+greet("Anderson", "Mr")
 ```
 
 ---
@@ -119,12 +119,12 @@ salute("Anderson", "Mr")
 # Funksjoner med navngitte parametere
 
 ```swift
-func salute(prefix p: String, name n: String) {
+func greet(prefix p: String, name n: String) {
     println("Hello, \(p) \(n)!")
 }
 
 // Navn MÅ brukes når funksjonen kalles
-salute(prefix: "Mr", name: "Anderson")
+greet(prefix: "Mr", name: "Anderson")
 ```
 
 ---
@@ -133,11 +133,11 @@ salute(prefix: "Mr", name: "Anderson")
 
 ```swift
 // # = samme navn internt/eksternt
-func salute(#prefix: String, #name: String) {
+func greet(#prefix: String, #name: String) {
     println("Hello, \(prefix) \(name)!")
 }
 
-salute(prefix: "Mr", name: "Anderson")
+greet(prefix: "Mr", name: "Anderson")
 ```
 
 ---
@@ -145,13 +145,13 @@ salute(prefix: "Mr", name: "Anderson")
 # Funksjoner med varargs (variadic)
 
 ```swift
-func salute(names: String...) {
+func greet(names: String...) {
     for name in names {
         println("Hello \(name)")
     }
 }
 
-salute("Agent Smith", "Mr. Anderson")
+greet("Agent Smith", "Mr. Anderson")
 ```
 
 * Maks ett
