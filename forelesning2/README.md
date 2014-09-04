@@ -405,8 +405,6 @@ class Server {
 
 let server = Server(ip: "192.168.0.1")
 server.boot()
-NSThread.sleepForTimeInterval(5)
-println("Up for \(server.uptime) seconds")
 ```
 
 ---
@@ -516,7 +514,7 @@ StructUtils.typeMethod()
 # Access control
 
 * Swift defaulter til fornuftig access control, derfor ikke alltid nødvendig å tenke på dette
-* Blir viktig når man lager biblioteker
+* Blir viktig når man lager frameworks
 * Som standard internal
 
 ```swift
