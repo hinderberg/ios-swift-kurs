@@ -13,15 +13,15 @@
 
 ![](wwdc.png)
 
-^ Under utviklerkonferansen WWDC i starten av Juni, lanserte Apple ganske så uventet et nytt programmeringsspråk kalt Swift.
+^ * WWDC i starten av Juni,
+* Uventet
+* Nytt programmeringsspråk kalt .....
 
 ---
 
 ![](swift-logo-hero.jpg)
 
-^ kalt Swift.
-
-^Et nytt programmeringsspråk for iOS og OS X
+^ Swift.
 
 ---
 
@@ -29,11 +29,17 @@
 
 ![fit inline](tweet-trash.png)
 
+^ * En som kaster Objective-C boken sin.
+
 ---
 
 ## og dette
 
 ![100% inline](tweet-mattt.png)
+
+^ * Eller som Matt Thompson
+* Alle er nybegynnere samtidig
+* Ingen bedre tid enn nå til å starte med iOS og OSX utvikling
 
 ---
 
@@ -48,23 +54,24 @@
 1. _Hva er swift?_
 2. _Hvordan ser det ut?_
 2. _Playground_
-3. _REPL_
+3. _De har laget en REPL_
 
 ---
 
 # Hva er Swift?
 * _Et programmeringsspråk for iOS og OSX laget av Apple_
 * _De har fjernet C avhengigheten og Swift tar over for Objective-C_
-* _Fokus på Enkelhet og sikkerhet. Moderne og kraftig_
-* _Fungerer side-om-side med C og Objetice-C_
+* _Moderne, Enkelhet og sikkert_
+* _Fungerer side-om-side med C og Objective-C_
 * _Paradigmer som imperativ, OOP og funksjonelt_  
 
-^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
-De sier at språket har fokus på sikkerhet og det merkes ved at kompileren er
-flink til å finne utvikler feil og at de tvinger utviklere til å bruke visse patterns når de utvikler.
-Enkelheten kommer frem i den lette syntaxen, de har for eksempel fjernet semi-kolon.
-Mye inspirasjon kan man si at har blitt hentet fra språk som .NET familien, spesielt
-F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
+^ * Laget av Apple
+* Under utvikling i rundt 4re år
+* Fjernet avhengighet for å få mer frihet
+* Moderne, Enkelt og sikkert
+* Laget en bro til C og Obj-C
+* Kjente paradigmer som funksjonelt og OOP
+* Hentet inspirasjon fra .NET og F#, List, Javascript
 
 ---
 
@@ -75,6 +82,9 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 ```swift
 			   println("Hei hei BEKK")
 ```
+
+^* Dette er et helt program i Swift
+* Printer ut Hei hei BEKK på en ny linje
 
 ---
 
@@ -91,10 +101,11 @@ var numberOfemployees: Int = 320
 numberOfemployees = 500
 ```
 
-^ Konstanter deklareres med LET og variabler med VAR
-En konstant kan bare bli satt en gang, men det må ikke skje ved kompilering.
-I Swift er det foretrukket å bruke konstanter og imutable verdier, med mindre noe skal endre seg
-Dette vil blant annet gjøre det enklere i multi-treding og enklere for kompileren.
+^ * Konstanter deklareres LET
+* Variabler med VAR
+* Type defineres med kolon også typen
+* Konstant kan bare bli satt en gang, men det må ikke skje ved kompilering.
+* Oppfordrer til imutabilitet over mutabilitet
 
 ---
 
@@ -111,16 +122,14 @@ numberOfemployees = 500
 ```
 
 
-^Type interence er et stort fokus punkt i Swift.
-Det betyr med andre ord at du skjelden trenger å spesifisere typen. Men typen vil fortsatt vœre der.
+^ * Stort fokus punkt i Swift.
+* * Du skjelden trenger å spesifisere typen. Men typen vil fortsatt vœre der.
 
-^De analyserer både oppover og nedover i type-treet.
-Det vil si at om du ikke spesifiserer typen, så vil det analysere output av det du setter variabelen din til for å finne typen.
+^ * De analyserer både oppover og nedover i type-treet.
+* Analysere output av det du setter variabelen din til for å finne typen.
 
-^Men om du setter typen, så vi den typen overskrive den faktiske typen.
-For eksempel hvis du setter en Double til å vœre Float.
-
-^Verdier vil aldri automatisk skifte type, så om du skal legge sammen er string og int, så må du eksplisitt konvertere en av dem.
+^ * Verdier vil aldri automatisk skifte type,
+* Legge sammen er string og int, så må du eksplisitt konvertere en av dem.
 
 ---
 
@@ -136,6 +145,7 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 
 ^Jada, du kan bruke emicons
+* Men fokuset her er å la utviklere utvikle i det språket de snakker
 
 ---
 
@@ -151,8 +161,10 @@ let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
 //10 ganger 8 er 80
 ```
 
-^Strenger kan kombineres ved hjelp av streng interpolation. Der man også kan skrive matematiske utrykk.
-^Det er også laget broer mellom Objective-C sine NSString klasse og Swift String, noe som gjør at man kan benytte disse om hverandre.
+^Strenger kan kombineres ved hjelp av streng interpolation.
+* Der man også kan skrive matematiske utrykk
+* Kalle funksjoner
+^ * Bro mellom Objective-C NSString og Swift String, noe som gjør at man kan benytte disse om hverandre.
 
 ---
 
@@ -166,7 +178,8 @@ _Det finnes to typer collections i Swift_
 * _Dictionaries_
 
 
-^ De vanlige typene finnes også i Swift. Map i java
+^ * De vanlige typene finnes også i Swift.
+* Map i java
 
 ---
 
@@ -296,35 +309,40 @@ default:
 }
 ```
 
-^regulœre utrykk
-
 ---
 
 # Du kan switche på instanser
 
 ``` swift
-switch sender {
-  case childButton:
-    println("Du er et barn!")
-  case oldisButton:
-    println("Du er gammal!")
-  default:
-    println("I mellom en plass?;)")
+@IBAction func buttonTouched(sender : UIButton) {
+	switch sender {
+	  case childButton:
+	    println("Du er et barn!")
+	  case oldisButton:
+	    println("Du er gammal!")
+	  default:
+	    println("I mellom en plass?;)")
+	}
 }
 ```
 
 ^ Man kan også switche på instanster av forskjellige typer.
+* En knapp
 
 ---
 
 ++++
+
+^ * regulœre utrykk,
+* where clause etc
 
 ---
 
 # Optionals
 
 
-^ Rammverk, mange måter i objective-c
+^ , mange måter i objective-c, NSNull, null, nil, NULL, -1...etc
+* Rammeverk og hva bruker de? Løst med optionals
 
 ---
 
@@ -340,7 +358,7 @@ if possibleWelcomeMessage == nil {
 }
 ```
 
-^Greit å vite at typer som ikke er optinal kan ikke vœre nil.
+^Greit å vite at typer som ikke er optional kan ikke vœre nil.
 Da får man kompile error
 
 ---
@@ -473,7 +491,7 @@ println("Fikk status \(status.code): \(status.message)")
 ```
 ---
 
-# Funksjoner med x antall av samme type param
+# Funksjoner med n param av samme type
 
 ```swift
 func total(numbers: Double...) -> Double {
@@ -639,8 +657,8 @@ reversed = sorted(names, >)
 * _Klasser = Reference Types_
 * _Structs = Value Types_
 
-^ Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
-Reference types øker bare antall pekere til det samme objektet.
+^ * Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
+* Reference types øker bare antall pekere til det samme objektet.
 
 ---
 
@@ -1043,6 +1061,11 @@ if let imageUrl = potensialImgUrl {
 ---
 
 # Swift er ikke ferdig
+
+^Ikke stabilt før om omtrent 2 år
+* Kan brukes i dag
+* Xcode embedder en liten runtime i appen
+* Så runtimen vil ikke ligge på iOS før om noen år
 
 ---
 
