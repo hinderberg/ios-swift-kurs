@@ -557,6 +557,8 @@ Mer om protocols når vi går over til iOS
 
 # [fit] Generics
 
+---
+
 * Mye av Swift sitt standard bibliotek er bygd med generics kode
 * For eksempel er Array og Dicionary typene generic collections
 * Kan definere at typen i det minste skal implementere en protocol
