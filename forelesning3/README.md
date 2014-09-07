@@ -381,7 +381,239 @@ if let johnsStreet = john.residence?.address?.street {
 
 ---
 
+- En møte å sjekke typen til en instans
+- Eller behandle den instansen som om det var en annen type i dens typetre
+- ___is___ og ___as___
 
+---
+
+```swift
+class MediaItem {}
+class Movie: MeidaItem {}
+class Song: MediaItem {}
+
+let library = [
+    Movie(name: "Casablanca", director: "Michael Curtiz"),
+    Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
+    Movie(name: "Citizen Kane", director: "Orson Welles"),
+    Song(name: "The One And Only", artist: "Chesney Hawkes"),
+    Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
+]
+
+library[0] is Movie // true
+library[1] is Song // true
+library[2] is Song // false
+
+```
+
+---
+
+as og as?
+
+```swift
+
+
+
+for item in library {
+    if let movie = item as? Movie {
+        println("Movie: '\(movie.name)', dir. \(movie.director)")
+    } else if let song = item as? Song {
+        println("Song: '\(song.name)', by \(song.artist)")
+    }
+}
+```
+
+---
+
+# Any og AnyObject
+
+- AnyObject kan representere en instans hvilke som helst klassetype
+- Any kan representere en instans av hvilke som helst type, foruten funksjontyper
+- Bør bare brukes når man faktisk trenger det, vœr heller eksplisitt
+
+---
+
+```swift
+
+// Cocoa apis og array vil alltid innholde AnyObject,
+// da Objective-C ikke har eksplisitte typede arrays
+
+let someObjects: [AnyObject] = [
+    Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
+    Movie(name: "Moon", director: "Duncan Jones"),
+    Movie(name: "Alien", director: "Ridley Scott")
+]
+
+for movie in someObjects as [Movie] {
+    println("Movie: '\(movie.name)', dir. \(movie.director)")
+}
+
+```
+
+---
+
+```swift
+var things = [Any]()
+
+things.append(0)
+things.append(42)
+things.append(3.14159)
+things.append("hello")
+things.append((3.0, 5.0))
+
+for thing in things {
+    switch thing {
+    case 0 as Int:
+        println("zero as an Int")
+    case let someInt as Int:
+        println("an integer value of \(someInt)")
+    case let someDouble as Double where someDouble > 0:
+        println("a positive double value of \(someDouble)")
+    case is Double:
+        println("some other double value that I don't want to print")
+    case let someString as String:
+        println("a string value of \"\(someString)\"")
+    case let (x, y) as (Double, Double):
+        println("an (x, y) point at \(x), \(y)")
+    default:
+        println("something else")
+    }
+}
+```
+
+---
+
+# Nested types
+
+- Man kan ha klasser, structurs og enums nestet i hverandre
+
+
+```swift
+struct Person {
+
+    enum Mood: Character {
+        case Sad = ":(", Happy = ":)"
+    }
+
+}
+```
+---
+
+# [fit] Extentions
+
+---
+
+* Utvide funksjonalitet for en bestemt type
+* Vanlig og static kalkulerte properties
+* Definere nye instansmetoder og klassemetoder
+* Nye init metoder
+* Nye subscripts
+* Definere ny nestet type
+* Gir mulighet å implementere en protocol for en eksiterende type
+
+---
+
+```swift
+
+
+
+
+extension String {
+  var uppercase: String { return self.uppercaseString }
+}
+
+var name = "Hans Magnus"
+name.uppercase // "HANS MAGNUS"
+
+```
+
+---
+
+# Protocols
+
+* _Samme som interface i Java og andre språk_
+* _Definerer opp et sett med metoder, properties, klasse metoder, operatorer og subscripts som passer en bestemt funksjonalitet_
+* _Inneholder ingen implementasjonskode_
+
+---
+
+```swift
+
+
+
+protocol Firm {
+  var mustBeSettable: Int { get set }
+  var doesNotNeedToBeSettable: Int { get }
+
+
+  class func someTypeMethod()
+  func random() -> Double
+}
+```
+
+Mer om protocols når vi går over til iOS
+
+---
+
+# [fit] Generics
+
+* Mye av Swift sitt standard bibliotek er bygd med generics kode
+* For eksempel er Array og Dicionary typene generic collections
+* Kan definere at typen i det minste skal implementere en protocol
+
+---
+
+# Generic functions
+
+```swift
+
+func printSequence<T: SequenceType>(sequence: T) {
+    for part in sequence {
+        println(part)
+    }
+}
+
+printSequence("ABCDEF")
+printSequence(["Aa", "Bb"])
+printSequence(["A": "B", "B": "A"])
+```
+
+---
+
+# Generic Types
+
+- Enums, structs og klasser kan også vœre generiske
+- Array og Dictionary er eksempler på generiske structs
+
+---
+
+```swift
+class GenericClass<T> {
+    var object: T
+
+    init(object: T) {
+        self.object = object
+    }
+
+    func getObject() -> T {
+        return self.object;
+    }
+
+    func prinObject() {
+        println("Type of T is \(self.object)");
+    }
+}
+
+var a = GenericClass<Int>(object: 1)
+a.prinObject()
+
+```
+
+---
+
+# Associated Types
+
+.....
 
 ---
 
