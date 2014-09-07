@@ -23,7 +23,49 @@ struct Matrix {
 
 ## Oppgave 2
 
-1. Implementer en base klasse som kalles Shape med høyde og bredde properties
-1.1 Ta stilling til om de bør vœre variabler eller konstanter
-1.2 Lag en kontruktør til denne baseklassen
-2. Lag en subclass som arver fra base klassen Shape
+1. Lag klassene som er nødvendig for at denne if statementen fungerer
+2. Lag instansene som utløser de to forskjellige muligetene i if statmenten
+
+```swift
+if let street = westerdals.students.first?.address?.street {
+    println("Studenten bor i \(street).")
+} else {
+    println("Kunne ikke hente gatenavn")
+}
+```
+
+## Oppgave 3
+
+1. Lag en metode på address og kall den i stedet for street i if statementen
+
+```swift
+if westerdals.students.first?.address?.printStreet() {
+    println("Det gikk bra å kalle print funksjonen")
+} else {
+    println("Jeg kunne ikke kalle metoden")
+}
+```
+
+## Oppgave 4
+
+1. Lag en metode som returnerer en optional på address
+
+```swift
+if let fullStreetName = westerdals.students.first?.address?.buildFullStreetName() {
+    println("Fullstendig gatenavn er \(fullStreetName)")
+} else {
+    println("Kunne ikke hente fullstendig gatenavn")
+}
+```
+
+## Oppgave 5
+
+1. Lag en bytt ut first? med subscript kall for å hente ut student nummer 2
+
+```swift
+if let street = westerdals.students.first?.address?.printStreet {
+    println("Det gikk bra å kalle print funksjonen")
+} else {
+    println("Jeg kunne ikke kalle metoden")
+}
+```

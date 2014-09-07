@@ -18,15 +18,12 @@
 
 # Agenda - Swift del 3
 
-* Subscripts
-* Arv og kontrutører
-* deinit
-* ARC
-* Optional chaining
-* Type casting
-* Nested types
-* Extentions
+* Subscripts, Kontrutører og Arv
+* deinit og ARC
+* Optionals og Optional chaining
+* Type casting og Nested types
 * Protocols
+* Extentions
 * Generics
 
 ---
@@ -364,6 +361,29 @@ class CreditCard {
 
 ---
 
+```swift
+
+
+if let johnsStreet = john.residence?.address?.street {
+    println("John's street name is \(johnsStreet).")
+} else {
+    println("Unable to retrieve the address.")
+}
+```
+
+- Du kan akserssere properties
+- Kalle metoder
+- Kalle subscript
+
+---
+
+# [fit]Type Casting
+
+---
+
+
+
+---
 
 # [fit]Oppgaver
 
