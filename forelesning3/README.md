@@ -32,18 +32,29 @@
 
 ---
 
-* _Er snarveier for å hente elementer i en collection, liste eller sekvense_
-* _Man kan sette og gette på samme måte_
-* _Klasser, structurs og enums kan definere subscripts_
-* _Kan vœre read-write eller read only (ref kalkulerte properties)_
+* Snarveier for å hente og sette elementer i en collection, liste eller sekvens
+* Sette og gette på samme måte
+* Kan defineres i klasser, structurs og enums
+
+```swift
+
+//Dicinary structurs implementerer subscripts
+
+var studenterIfag = ["ios": 10000, "android": 90, "wp": 10]
+
+// Aksesser og sett elementer ved hjelp av key
+println(studenterIfag["ios"]) // 10000
+studenterIfag["ios"] = 500000
+
+```
 
 ___
+
+* Som kalkulerte properties, kan de vœre read-write eller read only
 
 ```swift
 
 class EnKlassemedSubscript {
-
-    ...
 
     subscript (<parameters>) -> <return type> {
         // man må ha en getter
@@ -61,25 +72,12 @@ class EnKlassemedSubscript {
 
 ---
 
-# Dicionary definerer subscripts
-
-```swift
-
-var studenterIfag = ["ios": 10000, "android": 90, "wp": 10]
-
-// Aksesser og sett elementer ved hjelp av key
-
-println(studenterIfag["ios"]) // 10000
-studenterIfag["ios"] = 500000
-
-```
+# [fit]Subscript overloading
 
 ---
 
-# Subscript overloading
-
-* _Definere så mange subscript man ønsker_
-* _Type inference finner ut hvilke som skal bli brukt_
+* Definere så mange subscript man ønsker
+* Type inference finner ut hvilke som skal bli brukt
 
 ```swift
 
@@ -107,13 +105,12 @@ class EnKlassemedSubscripts {
 ---
 
 * Krever at man bruker navngitte parametre
-* Som metoder så kan det droppes ved hjelp av `_`, men anbefales ikke
+* Som metoder så de omgås ved hjelp av `_`, men det anbefales ikke
 * Kontanter kan settes i kontruktøren
 
 ```swift
 
 class LivingThing {
-
     let birth: NSDate
 
     init(birth: NSDate) {
@@ -130,10 +127,8 @@ var aThing = LivingThing(birth: NSDate())
 * Optionals og verdier med default verdi må ikke settes i kontruktøren
 
 ```swift
-// base class og superclass
 
 class LivingThing {
-
     let birth: NSDate
     var death: NSDate?
     var isAlive: Bool = true
@@ -141,15 +136,52 @@ class LivingThing {
     init(birth: NSDate) {
         self.birth = birth
     }
-
 }
+var livingThing = LivingThing(birth: NSDate())
 ```
 
 ---
 
 * Man kan ha flere kontruktører og de kan kalle hverandre
-* __Designated__- og __Convenience__ kontruktører
+* Det finnes to forskjellige kontruktørtyper:
+
+---
+
+__Designated__
+
+* Primœr konstruktør som må initialisere alle properties
+* Må kalle sin superclass konstruktør
+* Det er ofte få eller bare en __Designated__ konstruktør
+* Alle klasser må minst ha en
+
+---
+
+```swift
+
+
+class LivingThing {
+    let birth: NSDate
+    var death: NSDate?
+    var isAlive: Bool = true
+
+    init(birth: NSDate) {
+        self.birth = birth
+    }
+}
+
+var livingThing = LivingThing(birth: NSDate())
+```
+
+---
+
+__Convenience__
+
+* Setter typisk opp en gitt state for klassen
+* Krever ofte fœrre parametre
+* Bruk de som en snarvei for å sette opp en ofte brukt state
 * __Convenience__ må til slutt kalle __Designated__
+
+---
 
 ```swift
 class LivingThing {
@@ -161,11 +193,16 @@ class LivingThing {
         self.birth = birth
     }
 
-    convenience init(birth: NSDate, isAlive: Bool) {
-        self.init(birth: birth)
-        self.isAlive = isAlive
+    convenience init() {
+      self.init(birth: NSDate())
+      self.isAlive = false // må vœre etter self.init
     }
 }
+
+var livingThing = LivingThing(birth: NSDate())
+
+// convenience
+var livingThing2 = LivingThing()
 ```
 
 ---
@@ -179,15 +216,15 @@ En klasse kan arve
 * metoder
 * properties
 
-og alt annet fra en annen klasse
+og ....... alt annet fra en annen klasse
 
 ---
 
-* En klasse som arver fra en annen et kjent som __subclass__
-* Klassen som __subclass__ arver fra er kjent som __superclass__
-* En klasse som ikke arver av noen er kjent som en __base class__
-* En __subclass__ kan kalle metoder, properties, subscripts på __superclass__
-* __subclass__ kan overstyrer __superclass__ sine metoder, properties og subscripts
+* En klasse som arver fra en annen betegnes __subclass__
+* Klassen som __subclass__ arver fra betegnes __superclass__
+* En klasse som ikke arver av noen betegnes __base class__
+* En __subclass__ kan kalle metoder, properties og subscripts på __superclass__
+* __subclass__ kan overstyre __superclass__ sine metoder, properties og subscripts
 
 ---
 
@@ -278,7 +315,7 @@ gunnar.birth // 2014-09-07 14:17:59 +0000
 
 # Deinit
 
-Du kan rydde opp etter deg ved å bruke deinit metoden
+Deinitializer kalles rett før klassen blir fjernet fra minne
 
 
 ```swift
@@ -304,56 +341,85 @@ class Student : Person {
 
 ---
 
+- Vanligvis håndterer ARC automatisk minne for deg, men av og til må man gjøre litt selv
 - Implisitt sterk referanse
-- Bruk weak for å si at man ikke ønsker å øke referansetelleren
-- En weak kan ikke vœre en konstant
+- Alt som har en referanse blir holdt i minne
 
 ```swift
 
-class Person {
-    let name: String
-    init(name: String) { self.name = name }
-    var apartment: Apartment?
-    deinit { println("\(name) is being deinitialized") }
+
+
+var reference1: Student?
+var reference2: Student?
+
+reference1 = Student(firstName: "Lars", lastName: "Gunnar", birth: NSDate()) // sterk referanse
+reference2 = reference1 // To sterke referanser til Lars
+
+reference1 = nil // en sterk referanse igjen
+reference2 = nil // ingen refferanse igjen, instansen blir fjernet fra minne og deinit blir kalt
+```
+
+---
+
+- Hvordan løser vi sirkulœre avhengigheter?
+- Bruk __weak__ for å si at man ikke ønsker å øke referansetelleren
+- Man kan ikke bruke __weak__ på kontanter, da en weak vil kunne endre seg runtime
+
+---
+
+```swift
+
+class Student : Person {
+    ...
+
+    weak var school: School?
+
+    ...
 }
 
-class Apartment {
-    let number: Int
-    init(number: Int) { self.number = number }
-    weak var tenant: Person?
-    deinit { println("Apartment #\(number) is being deinitialized") }
+class School {
+
+    ....
+
+    var students = [Student]()
+
+    ....
 }
 
 ```
 
 ---
 
-- Bruk unknown i stedet for weak der du vet at verdien alltid vil vœre satt
+- Hvis refferansen kan bli nil en gang i løpet av applikasjonens kjøretid, bruk __weak__
+- Bruk __unowned__ i stedet for weak der du vet at verdien alltid vil vœre satt
+
+---
 
 ```swift
-class Customer {
-    let name: String
-    var card: CreditCard?
-    init(name: String) {
-        self.name = name
-    }
-    deinit { println("\(name) is being deinitialized") }
+class Student : Person {
+    ...
+
+    unowned var school: School?
+
+    ...
 }
 
-class CreditCard {
-    let number: UInt64
-    unowned let customer: Customer
-    init(number: UInt64, customer: Customer) {
-        self.number = number
-        self.customer = customer
-    }
-    deinit { println("Card #\(number) is being deinitialized") }
+class School {
+
+    ....
+
+    var students = [Student]()
+
+    ....
 }
 ```
 
 ---
 
-# [fit]Se boken for mer informasjon om minnehåndtering i Swift
+# [fit]Se boken for mer informasjon om
+# [fit]minnehåndtering
+<br/>
+### _Under kapitellet -> Automatic Reference Counting_
 
 ---
 
@@ -364,10 +430,10 @@ class CreditCard {
 ```swift
 
 
-if let johnsStreet = john.residence?.address?.street {
-    println("John's street name is \(johnsStreet).")
+if let street = westerdals.students.first?.address?.street {
+    println("Studenten bor i \(street).")
 } else {
-    println("Unable to retrieve the address.")
+    println("Kunne ikke hente gatenavn")
 }
 ```
 
@@ -381,55 +447,59 @@ if let johnsStreet = john.residence?.address?.street {
 
 ---
 
-- En møte å sjekke typen til en instans
-- Eller behandle den instansen som om det var en annen type i dens typetre
-- ___is___ og ___as___
+# [fit]_is_
+- brukes til å sjekke typen til en instans
+
+# [fit]_as_
+- brukes til å behandle en instans som om det var en annen type i dens typetre
 
 ---
 
 ```swift
-class MediaItem {}
-class Movie: MeidaItem {}
-class Song: MediaItem {}
+class LivingThing {}
+class Person: LivingThing {}
+class Animal: LivingThing {}
 
-let library = [
-    Movie(name: "Casablanca", director: "Michael Curtiz"),
-    Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
-    Movie(name: "Citizen Kane", director: "Orson Welles"),
-    Song(name: "The One And Only", artist: "Chesney Hawkes"),
-    Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
+let living = [
+    Person(birth: NSDate()),
+    Animal(birth: NSDate()),
+    Person(birth: NSDate()),
+    Animal(birth: NSDate()),
+    Animal(birth: NSDate())
 ]
 
-library[0] is Movie // true
-library[1] is Song // true
-library[2] is Song // false
+living[0] is Person // true
+living[1] is Animal // true
+living[2] is Animal // false
 
 ```
 
 ---
 
-as og as?
+# as?
 
 ```swift
 
 
 
-for item in library {
-    if let movie = item as? Movie {
-        println("Movie: '\(movie.name)', dir. \(movie.director)")
-    } else if let song = item as? Song {
-        println("Song: '\(song.name)', by \(song.artist)")
+for item in living {
+    if let person = item as? Person {
+        println("Is alive: \(person.isAlive)")
+    } else if let animal = item as? Animal {
+        println("\(animal.roar())")
     }
 }
 ```
 
 ---
 
-# Any og AnyObject
+# [fit]Any og AnyObject
+
+---
 
 - AnyObject kan representere en instans hvilke som helst klassetype
 - Any kan representere en instans av hvilke som helst type, foruten funksjontyper
-- Bør bare brukes når man faktisk trenger det, vœr heller eksplisitt
+- Bør bare brukes når man faktisk trenger det, vœr eksplisitt
 
 ---
 
@@ -439,13 +509,13 @@ for item in library {
 // da Objective-C ikke har eksplisitte typede arrays
 
 let someObjects: [AnyObject] = [
-    Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
-    Movie(name: "Moon", director: "Duncan Jones"),
-    Movie(name: "Alien", director: "Ridley Scott")
+    Person(birth: NSDate()),
+    Person(birth: NSDate()),
+    Person(birth: NSDate())
 ]
 
-for movie in someObjects as [Movie] {
-    println("Movie: '\(movie.name)', dir. \(movie.director)")
+for person in someObjects as [Person] {
+    println("Is alive: \(person.isAlive)")
 }
 
 ```
@@ -464,38 +534,44 @@ things.append((3.0, 5.0))
 for thing in things {
     switch thing {
     case 0 as Int:
-        println("zero as an Int")
+        println("Det var en int som var 0 der ja")
     case let someInt as Int:
-        println("an integer value of \(someInt)")
+        println("Fant en int som er \(someInt)")
     case let someDouble as Double where someDouble > 0:
-        println("a positive double value of \(someDouble)")
+        println("en positiv Double \(someDouble)")
     case is Double:
-        println("some other double value that I don't want to print")
+        println("En eller annen Double var også der gitt")
     case let someString as String:
-        println("a string value of \"\(someString)\"")
+        println("fant en string som inneholder \"\(someString)\"")
     case let (x, y) as (Double, Double):
-        println("an (x, y) point at \(x), \(y)")
+        println("en (x, y) verdi der x \(x), y \(y)")
     default:
-        println("something else")
+        println("noe annet greier")
     }
 }
 ```
 
 ---
 
-# Nested types
+# [fit]Nested types
+
+---
 
 - Man kan ha klasser, structurs og enums nestet i hverandre
 
 
 ```swift
-struct Person {
 
-    enum Mood: Character {
+
+struct Student {
+
+    enum Mood: String {
         case Sad = ":(", Happy = ":)"
     }
 
 }
+
+Student.Mood.Sad.toRaw()
 ```
 ---
 
@@ -541,17 +617,21 @@ name.uppercase // "HANS MAGNUS"
 
 
 
-protocol Firm {
+protocol LivingThing {
   var mustBeSettable: Int { get set }
   var doesNotNeedToBeSettable: Int { get }
 
 
   class func someTypeMethod()
   func random() -> Double
+  mutating func toggle() // gjør det mulig å endre properties
 }
 ```
 
-Mer om protocols når vi går over til iOS
+- En protocol kan brukes alle steder hvilke som helst type ville bli brukt
+- En klasse, struct eller enum kan implementere flere protocols
+- Protocols kan arve av hverandre
+- Mer om protocols når vi går over til iOS
 
 ---
 
@@ -560,8 +640,8 @@ Mer om protocols når vi går over til iOS
 ---
 
 * Mye av Swift sitt standard bibliotek er bygd med generics kode
-* For eksempel er Array og Dicionary typene generic collections
-* Kan definere at typen i det minste skal implementere en protocol
+* Eksempelvis er Array og Dicionary av typene generic collections
+* Kan definere at typen i det minste skal implementere en protocol "Type Constraints"
 
 ---
 
@@ -615,7 +695,34 @@ a.prinObject()
 
 # Associated Types
 
-.....
+- I en protocol kan man lage et alias (associated type) der det er opp til implementasjonen å definere den faktiske typen. Dette er for å kunne referere til typen i __append__ og __subscript__
+
+```swift
+protocol Container {
+    typealias ItemType
+    mutating func append(item: ItemType)
+    var count: Int { get }
+    subscript(i: Int) -> ItemType { get }
+}
+```
+
+---
+
+# Where
+
+```swift
+
+
+
+func allItemsMatch<
+    C1: Container, C2: Container
+    where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>
+
+    (someContainer: C1, anotherContainer: C2) -> Bool
+{
+  // funksjonskropp
+}
+```
 
 ---
 
