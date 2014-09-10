@@ -4,6 +4,34 @@
 
 ---
 
+# [fit] Hva skjedde på tirsdag?
+
+---
+
+# iPhone 6
+
+![100%](iphone6.png)
+
+---
+
+# Apple Watch
+
+![175%](applewatch.jpg)
+
+---
+
+# Xcode 6 GM seed
+
+![100%](xcode6.png)
+
+---
+
+# iOS 8 GM seed
+
+![100%](ios8.png)
+
+---
+
 # Sist gang
 
 * Funksjoner
