@@ -47,13 +47,13 @@ class Time {
 
 ## Oppgave 3
 
-1. Lag en base klasse Animal, der du finner måter å final og required som beskrevet i slidene
+1. Lag en base klasse Animal, der du finner måter å bruke final og required som beskrevet i slidene
 2. Lag en metode for å sove, en metode for å lage en lyd med println og en metode for å spise
 3. Lag deretter en subclass, for eksempel Bird som arver av base klassen Animal
-4. Bruker override for å skrive over base klassen funksjonaliteten
+4. Bruk override for å skrive over base klassen funksjonaliteten
 5. Lag en subclass til som arver av Animal base klassen
 6. Lag en array med begge subklassene og foreach over dem,
-   identifiser hva slags type det er og skriv det ut ved hjelp av println
+7. Identifiser hva slags type det er og skriv det ut ved hjelp av println
 
 ## Oppgave 4
 
@@ -138,4 +138,61 @@ NSDate().daysBetweenDate(NSDate(timeIntervalSinceNow: 3.15569e10)) // 365,241.89
 
 ## Oppgave 11
 
-1. Lag en extention 
+1. Få koden under til å kjøre. Lim inn en og en oppgave og løs dem ved bruk av generics.
+
+HINT. På oppgave 4 kan det vœre lurt å slå opp hvordan man implementerer SequenceType- og
+ GeneratorType protokollen
+
+```swift
+
+class ContainerItem: Hashable, Printable {
+    let description: String
+
+    init(description: String) {
+        self.description = description
+    }
+
+    var hashValue: Int {
+        get {
+          return (31 &* self.description.hashValue) // skal printe ut (12 times)
+        }
+    }
+}
+
+func == (lhs: ContainerItem, rhs: ContainerItem) -> Bool {
+    return lhs.description == rhs.description // skal printe ut (9 times)
+}
+
+class Shirt: ContainerItem {}
+class Shorts: ContainerItem {}
+
+// Oppgave 1
+var container = Container<ContainerItem>() // skal printe ut {0 key/value pairs}
+
+// Oppgave 2
+let myFavoriteShirt = Shirt(description: "One of my favorite shirts") // skal printe ut {{description "One of my favorite shirts"}}
+let myFavoriteShorts = Shorts(description: "My favorite shorts") // skal printe ut {{description "My favorite shorts"}}
+let myOtherShirt = Shirt(description: "My other shirt") // skal printe ut {{description "My other shirt"}}
+
+container.addItem(myFavoriteShirt) // skal printe ut {[{…}: 1]}
+container.addItem(myFavoriteShirt) // skal printe ut {[{…}: 2]}
+container.addItem(myFavoriteShorts) // skal printe ut {[{…}: 2, {…}: 1]}
+container.addItem(myOtherShirt) // skal printe ut {[{…}: 1, {…}: 2, {…}: 1]}
+
+// Oppgave 3
+container.removeItem(myFavoriteShirt) // skal printe ut {[{…}: 1, {…}: 1, {…}: 1]}
+
+// Oppgave 4
+for (obj, count) in container {
+    println(obj.description, count)
+}
+
+/*
+Skal skrive ut i consolet:
+
+(My other shirt, 1)
+(One of my favorite shirts, 1)
+(My favorite shorts, 1)
+
+*/
+```
