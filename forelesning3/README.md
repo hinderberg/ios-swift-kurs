@@ -723,7 +723,10 @@ a.prinObject()
 
 # Associated Types
 
-- I en protocol kan man lage et alias (associated type) der det er opp til implementasjonen å definere den faktiske typen. Dette er for å kunne referere til typen i __append__ og __subscript__
+- I en protokoll kan man lage et alias (associated type) der det er opp til implementasjonen å definere den faktiske typen.
+- Dette er for å kunne referere til typen i metoder og subscripts uten at man bestemmer typen i protokollen
+
+---
 
 ```swift
 protocol Container {
@@ -731,6 +734,27 @@ protocol Container {
     mutating func append(item: ItemType)
     var count: Int { get }
     subscript(i: Int) -> ItemType { get }
+}
+
+class Example: Container {
+    typealias ItemType = String
+    var array = [ItemType]()
+
+    func append(item: ItemType) {
+        self.array.append(item)
+    }
+
+    var count: Int {
+        get {
+            return countElements(array)
+        }
+    }
+
+    subscript(i: Int) -> ItemType {
+        get {
+            return array[i]
+        }
+    }
 }
 ```
 
