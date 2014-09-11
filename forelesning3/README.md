@@ -781,3 +781,5 @@ func allItemsMatch<
 # [fit]Oppgaver
 
 ##[fit] Se [Øvingsoppgavene](oppgaver3.md)
+
+##[fit] https://github.com/hinderberg/ios-swift-kurs
