@@ -1,6 +1,6 @@
 # [fit]PG5600
 # [fit]iOS programmering
-## Forelesning 2
+## Forelesning 3
 
 ---
 
@@ -66,7 +66,7 @@
 
 ```swift
 
-//Dicinary structurs implementerer subscripts
+// Dictionary structures implementerer subscripts
 
 var studenterIfag = ["ios": 10000, "android": 90, "wp": 10]
 
@@ -177,10 +177,10 @@ var livingThing = LivingThing(birth: NSDate())
 
 __Designated__
 
-* Primœr konstruktør som må initialisere alle properties
-* Må kalle sin superclass konstruktør
+* Primœr konstruktør som må initialisere alle ikke-optional, ikke-initialiserte properties
+* Må kalle sin superclass konstruktør (ved arv)
 * Det er ofte få eller bare en __Designated__ konstruktør
-* Alle klasser må minst ha en
+* Alle klasser må minst ha en, med mindre man har defaultverdier på alle properties
 
 ---
 
@@ -207,7 +207,7 @@ __Convenience__
 * Setter typisk opp en gitt state for klassen
 * Krever ofte fœrre parametre
 * Bruk de som en snarvei for å sette opp en ofte brukt state
-* __Convenience__ må til slutt kalle __Designated__
+* __Convenience__ må først kalle __Designated__
 
 ---
 
