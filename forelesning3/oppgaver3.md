@@ -22,8 +22,12 @@ struct Matrix {
 }
 
 var matrix = Matrix(rows: 2, columns: 2)
-matrix[1,1] = 2.0
-matrix[1,1] // prints 2.0
+matrix[0, 0] = 0
+matrix[1, 0] = 1
+matrix[0, 1] = 2
+matrix[1, 1] = 3
+
+matrix // prints [0.0, 2.0, 1.0, 3.0]
 
 ```
 
