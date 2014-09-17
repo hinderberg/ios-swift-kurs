@@ -31,6 +31,7 @@ ios-swift-kurs
 
 [Intro til iOS-utvikling](forelesning4)
 --------------
+* Sette opp et nytt iOS prosjekt i XCode
 * Komponentene i en iOS app
 * Launch flow
 * Application lifecycle
