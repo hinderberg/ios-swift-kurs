@@ -6,21 +6,101 @@
 
 # Agenda
 
+* Sette opp et nytt iOS prosjekt i XCode
 * Komponentene i en iOS app
 * Launch flow
 * Application lifecycle
 * MVC
 * View og view controllers
 
+
 ---
 
-# Sentral dokumentasjon:
+# Sette opp et nytt iOS prosjekt i XCode
+
+---
+
+Single View = tilnærmet tomt prosjekt
+
+![inline](img/project1.png)
+
+---
+
+![inline](img/project2.png)
+
+---
+
+# App ikoner
+
+![inline](img/appicons.png)
+
+Søk etter "Icon and Image Sizes" i dokumentasjon for oversikt over størrelser og krav
+
+---
+
+# Asset catalogs
+
+Består av image sets/icons/launch icons, og de forskjellige variantene som brukes på forskjellige enheter
+
+![inline](img/assets.png)
+
+---
+
+# Asset catalogs
+
+* Bilder kan lastes fra kode med: `UIImage(named: "ocean")`
+* Bilder kan settes fra Interface builder, eksempelvis med å lage et UIImageView som du igjen setter bildet på:
+
+![inline](img/imageview.png)
+
+---
+
+# Launch image / launch file (iOS 8)
+
+__Best practise__: Lag et bilde/xib som er lik første skjermbilde i applikasjonen, men uten innhold. Dette for å gi en illusjon av at appen starter raskere:
+
+![inline](img/launchimage.png)
+
+---
+
+# Launch image / launch file (iOS 8)
+
+__Bad practise__:
+
+* Splash screen
+* Brandingelementer (eks. stor logo)
+
+---
+
+# Sentral dokumentasjon
+
+---
+
+# Sentral dokumentasjon
 
 * Apple docs (XCode -> Help -> Documentation and API reference): 
     * App Programming Guide for iOS
         * The App Life Cycle
     * View Programming Guide for iOS
     * View Controller Programming Guide for iOS
+
+---
+
+# Sentral dokumentasjon
+
+1. ALT-klikk på symbol for å åpne quick help
+2. Klikk på linken i "Reference" for å gå til class reference
+
+![inline](img/alt-help.png)
+
+---
+
+# Sentral dokumentasjon
+
+1. Sett cursor i symbol
+2. Velg quick help i inspectoren
+
+![left fit](img/inspector-help.png)
 
 ---
 
@@ -343,14 +423,48 @@ class CustomViewController: UIViewController {
 
 # XIB eksempel
 
+Koble view og view controllere sammen via assistant editor
+
 ![inline](img/xib4.png)
 
 ---
 
 # Koble view og view controllere sammen
 
-* Outlets
-* Targets
+* Outlets - referanser til UI elementer fra kode (manipulere/hente ut verdier)
+* Targets - referanser fra UI til kode (kalle metoder)
+
+---
+
+# Koble view og view controllere sammen
+
+![inline](img/ib-action1.png)
+
+---
+
+# Koble view og view controllere sammen
+
+![inline](img/ib-action2.png)
+
+---
+
+# Koble view og view controllere sammen
+
+![inline](img/ib-outlet1.png)
+
+---
+
+# Koble view og view controllere sammen
+
+![inline](img/ib-outlet2.png)
+
+---
+
+# Koble view og view controllere sammen
+
+Ferdig eksempel: action sayHello kalles når knappen trykkes på, og setter verdien på label (outlet)
+
+![inline](img/ib-actionoutlet.png)
 
 ---
 
