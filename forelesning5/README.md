@@ -45,6 +45,11 @@
 ---
 
 ```swift
+
+
+
+
+
 protocol DataHandlerProtocol {
     func didFinishGettingData(data: NSData)
     func didFailGettingData(error: NSError)
@@ -58,6 +63,9 @@ protocol DataHandlerProtocol {
 ---
 
 ```swift
+
+
+
 class A : DataHandlerProtocol {
     func didFinishGettingData(data: NSData) {
         println(data)
@@ -76,6 +84,9 @@ class A : DataHandlerProtocol {
 ---
 
 ```swift
+
+
+
 class Fetcher {
 
     var delegate: DataHandlerProtocol?
