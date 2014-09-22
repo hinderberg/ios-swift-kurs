@@ -321,6 +321,14 @@ class ViewController: UIViewController {
 
 ---
 
+![100%](uicollectionview_intro.png)
+
+---
+
+![100%](uicollectionview_callouts.png)
+
+---
+
 # [fit]UICollectionViewController består av
 
 ---
