@@ -21,6 +21,6 @@ HINT: Ta i bruk UICollectionViewController
 
 # Oppgave 3
 
-Lek med Unified Storyboard, Size classes og Auto Layout for å støtte alle potensielle størrelser i appen din.
+Lek med Unified Storyboard, Size classes og Auto Layout for å støtte flest mulig potensielle størrelser i appen din.
 
 HINT: Dette kan for eksempel vœre iPhone versjon <= 5, iPhone versjon >= 6 og iPad
