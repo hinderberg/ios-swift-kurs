@@ -4,16 +4,12 @@
 
 # Oppgave 1
 
-Implementer en App som har følgende funksjonalitet for både iPad og iPhone
-* Du må ta utgangspunkt i Single View Application templatet
-
-Applikasjonen er en TODO applikasjon og brukerne skal kunne bruke den på både iPhone og iPad
+Implementer en TODO App som har følgende funksjonalitet:
 
 1. En bruker skal bli presentert med en liste av TODOS når han starter applikasjonen
-2. På iPad skal brukeren ha listen til venstre og detalj for en valgt todo til høyre
-3. På iPhone skal brukeren ha en liste og når brukeren trykker på et element i listen skal brukeren se detaljene for den valgte TODOen
-4. Brukeren skal ha mulighet til å legge til TODO fra første visning på alle flater
-5. Brukeren skal kunne fullføre en oppgave og da skal oppgaven blir borte fra listen på første side
+3. Når brukeren trykker på et element i listen skal brukeren se detaljene for den valgte TODOen
+4. Brukeren skal ha mulighet til å legge til TODO
+5. Brukeren skal kunne fullføre en oppgave og da skal oppgaven blir borte fra listen
 
 HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITableViewController og Delegate pattern
 
@@ -26,4 +22,6 @@ HINT: Ta i bruk UICollectionViewController
 
 # Oppgave 3
 
-Lek med Unified Storyboard, Size classes og Auto Layout for å støtte alle potensielle størrelser i appen din
+Lek med Unified Storyboard, Size classes og Auto Layout for å støtte alle potensielle størrelser i appen din.
+
+HINT: Dette kan for eksempel vœre iPhone versjon <= 5, iPhone versjon >= 6 og iPad
