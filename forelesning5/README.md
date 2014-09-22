@@ -37,6 +37,10 @@
 
 ---
 
+![100%](delegation1.jpg)
+
+---
+
 # Hva trengs?
 
 ---
