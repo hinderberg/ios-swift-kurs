@@ -483,6 +483,10 @@ class UITraitCollection : NSObject, NSCopying, NSSecureCoding, NSCoding {
 
 ---
 
+# [fit]Demo Interface Builder
+
+---
+
 # [fit]Oppgaver
 
 ##[fit] Se [Øvingsoppgavene](oppgaver5.md)
