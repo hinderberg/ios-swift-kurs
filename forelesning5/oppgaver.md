@@ -15,7 +15,7 @@ HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITab
 
 # Oppgave 2
 
-1. Fortsett på oppgave 1 og lag et annet view som også viser alle TODOS, men i en grid
+1. Fortsett på oppgave 1 og lag et annet view som også viser alle oppgaver, men i en grid
 2. Lag deretter en knapp for å toggle mellom listen som du lagde i oppgave 1 og grid'et
 
 HINT: Ta i bruk UICollectionViewController
