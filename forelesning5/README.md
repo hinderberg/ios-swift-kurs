@@ -314,11 +314,46 @@ class ViewController: UIViewController {
 
 ---
 
-* Er et mer fritt alternativ til UITableView
-* Støtter endringer av layout og setter få, om ikke ingen begrensninger for layout
-* En typisk collection view layout er den innebygde UICollectionViewFlowLayout, som viser en grid
-* Endringer gjøres ved hjelp av subclassing og de kan endre seg dynamisk
-* Så du kan implementere grids, stacks, sirkulœre eller hva som helst du kan se for deg
+* Er et friere alternativ til UITableView
+* Endringer gjøres ved hjelp av subclassing
+* Du kan implementere grids-, stacks-, sirkulœre layout
+* eller hva som helst annet du kan se for deg
+
+---
+
+# [fit]UICollectionViewController består av
+
+---
+
+# UICollectionView
+###Hoved  viewet som inneholder alle de andre viewene. Dette er veldig likt UITableView
+
+---
+
+# UICollectionViewCell
+### Lik UITableViewCell i UITableView. Celler kan lages programatisk eller via interface builder
+
+---
+
+# Supplementary Views
+### Du kan legge til flere views som ikke er celler
+### Dette er typisk view i toppen og bunnen
+
+---
+
+# Decoration View
+### views som ikke legger til noe funksjonalitet, men har til hensikt å gjøre collection view visuelt penere
+
+---
+
+# [fit]UICollectionViewLayout
+### Bestemmer hvordan layout av cellene skal vœre
+### Layout kan byttes ut runtime
+
+---
+
+# [fit]UICollectionViewFlowLayout
+### Apple har laget et eget layout som følger med
 
 ---
 
