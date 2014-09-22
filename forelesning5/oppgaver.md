@@ -6,9 +6,10 @@
 
 Implementer en TODO App som har følgende funksjonalitet:
 
-1. En bruker skal bli presentert med en liste av TODOS når han starter applikasjonen
-2. Brukeren skal ha mulighet til å legge til TODO
-3. Brukeren skal kunne fullføre en oppgave og da skal oppgaven blir borte fra listen eller vises som ferdig
+1. En bruker skal bli presentert med en liste av oppgaver når han starter applikasjonen
+2. Brukeren skal ha mulighet for å legge til en oppgave
+3. Brukeren skal kunne fullføre en oppgave og da skal oppgaven enten bli borte fra listen eller vises som ferdig
+4. Brukeren skal kunne slette oppgaver
 
 HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITableViewController og Delegate pattern
 
