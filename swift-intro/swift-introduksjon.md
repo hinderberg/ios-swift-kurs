@@ -1076,3 +1076,8 @@ if let imageUrl = potensialImgUrl {
 # [fit] Gira?
 # [fit] _**Lykke til!**_
 ##### _https://developer.apple.com/swift/_
+
+---
+
+# One more thing
+### _github.com/hinderberg/ios-swift-kurs_
