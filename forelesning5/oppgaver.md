@@ -2,7 +2,7 @@
 
 ---
 
-# Oppgave 1
+## Oppgave 1
 
 Implementer en TODO App som har følgende funksjonalitet:
 
@@ -11,7 +11,13 @@ Implementer en TODO App som har følgende funksjonalitet:
 3. Brukeren skal kunne fullføre en oppgave og da skal oppgaven enten bli borte fra listen eller vises som ferdig
 4. Brukeren skal kunne slette oppgaver
 
-HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITableViewController og Delegate pattern
+HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITableViewController, UIViewContoller og Delegate pattern
+
+### Eksempel
+
+![](liste.png)
+![](liste-checked.png)
+![](add.png)
 
 # Oppgave 2
 
@@ -20,7 +26,11 @@ HINT: Her kan man bruke UISplitViewController, UINavigationViewController, UITab
 
 HINT: Ta i bruk UICollectionViewController
 
-# Oppgave 3
+### Eksempel
+
+![](grid.png)
+
+## Oppgave 3
 
 Lek med Unified Storyboard, Size classes og Auto Layout for å støtte flest mulig potensielle størrelser i appen din.
 

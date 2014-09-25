@@ -384,8 +384,18 @@ class ViewController: UIViewController {
 
 ---
 
-# [fit]Demo
-# [fit]Constraint og Interface Builder
+* __Kontant verdi__ - Den fysiske størrelsen eller offsettet in antall punkt for regelen
+* __Relasjon__ - Bruk relasjoner og større enn, mindre enn eller lik for å spesifisere for eksempel at et views bredde >= 20, eller at et textview.leading >= (superview.leading + 20).
+* __Prioritetsgrad__ - Regler kan ha prioritet, slik at noen kan telle mindre enn andre. Default er prioriteten satt til maks (påkrevd) og da vil den bli håndhevd
+
+---
+
+# Interface builder, point and click
+
+<br />
+<br />
+
+![inline 100%](al_menu_callouts.png)
 
 ---
 
@@ -405,6 +415,61 @@ var constraints = NSLayoutConstraint.constraintsWithVisualFormat(
   views: views
 )
 ```
+
+---
+
+Ikke alt kan lages ved hjelp av visual format, for eksempel:
+
+```swift
+imageView.width = 2 * imageView.height
+```
+
+```swift
+// Vil gjøre det samme som eksempelet med visual format
+NSLayoutConstraint(
+  item: self.button1,
+  attribute: NSLayoutAttribute.Right,
+  relatedBy: NSLayoutRelation.Equal,
+  toItem: self.button2,
+  attribute: NSLayoutAttribute.Left,
+  multiplier: 1.0,
+  constant: -12.0
+)
+```
+
+---
+
+# [fit]Aktivere og deaktivere på NSLayoutConstraint
+
+```swift
+
+    var active: Bool
+
+    class func activateConstraints(constraints: [AnyObject])
+
+    class func deactivateConstraints(constraints: [AnyObject])
+
+```
+
+---
+
+# Potensielle problemer
+
+* Manglende regler
+* Viewet i inferface builder er plassert et annet sted en reglene vil plassere det
+* Konflikter
+* Tvetydighet - når det er flere løsninger for et view basert på reglene
+* Manglende regler
+
+---
+
+# [fit]Demo
+# [fit]Constraint og Interface Builder
+CTRL dra og pek
+
+---
+
+# View debugging, trykk pause
 
 ---
 
