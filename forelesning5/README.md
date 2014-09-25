@@ -597,6 +597,6 @@ class UITraitCollection : NSObject, NSCopying, NSSecureCoding, NSCoding {
 
 # [fit]Oppgaver
 
-##[fit] Se [Øvingsoppgavene](oppgaver5.md)
+##[fit] Se [Øvingsoppgavene](oppgaver.md)
 
 ##[fit] https://github.com/hinderberg/ios-swift-kurs
