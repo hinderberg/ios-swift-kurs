@@ -37,3 +37,21 @@ ios-swift-kurs
 * Application lifecycle
 * MVC
 * View og view controllers
+
+[Container controllere, patterns og auto layout](forelesning5)
+--------------
+* Delegate pattern
+* UINavigationController
+* UITableView og UITableViewController
+* UICollectionsView og UICollectionViewController
+* Auto Layout
+* Unified Storyboard og Size classes
+
+[Views og animasjoner](forelesning6)
+--------------
+* Viewkonsepter
+* Å instansiere views 
+* Å lage custom views
+* Eventhåndtering
+* Gestures
+* Animasjoner
