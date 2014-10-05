@@ -56,7 +56,7 @@ ios-swift-kurs
 * Gestures
 * Animasjoner
 
-[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning6)
+[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning7)
 --------------
 
 * Debugging
