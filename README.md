@@ -50,8 +50,18 @@ ios-swift-kurs
 [Views og animasjoner](forelesning6)
 --------------
 * Viewkonsepter
-* Å instansiere views 
+* Å instansiere views
 * Å lage custom views
 * Eventhåndtering
 * Gestures
 * Animasjoner
+
+[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning6)
+
+* Debugging
+* Swift og gjenbruk av kode
+  * Bundles
+  * Rammeverk
+* Tråder og asynkronitet
+* Snakke med internett
+* Cloud Kit
