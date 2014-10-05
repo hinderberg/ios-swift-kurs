@@ -60,7 +60,7 @@ Ta i bruk dette ufulstendig rammverket til prosjektet ditt
 
 ### Twitter aktig app
 Vi skal lage en twitter aktig app ved å snakke med en server.
-Sørg for å kunne utføre alle handlingene API'et tilbyr.
+Fullfør rammeverket fra oppgave fem og sørg for å kunne utføre alle handlingene API'et tilbyr.
 
 ### Server
 Serveren ligger på http://mobile-course.herokuapp.com/
@@ -98,8 +98,5 @@ Rest endepunktene leverer JSON og fungerer på følgende måte:
 	</tr>
 	</tbody>
 </table>
-
-
-Fullfør rammeverket i oppgave 5 og bruk det til å legge til og liste ut beskjeder i en applikasjon
 
 HINT: Bruk UITableView og UITextField for å liste ut og legge til beskjeder
