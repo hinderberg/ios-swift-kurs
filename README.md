@@ -57,6 +57,7 @@ ios-swift-kurs
 * Animasjoner
 
 [Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning6)
+--------------
 
 * Debugging
 * Swift og gjenbruk av kode
