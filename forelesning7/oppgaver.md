@@ -51,16 +51,16 @@ TIPS: Gjenbruk en av prosjektene vi har laget i foregående øvinger
 
 ## Oppgave 4
 
-Ta i bruk dette ufulstendig rammverket til prosjektet ditt
+Legg til disse filene i Cocoa Touch Rammeverket som du har laget i prosjektet ditt
 
-// TODO insert link
+Se [Filer](MessangerFiles.zip)
 
 ## Oppgave 5
 
 
 ### Twitter aktig app
 Vi skal lage en twitter aktig app ved å snakke med en server.
-Fullfør rammeverket fra oppgave fem og sørg for å kunne utføre alle handlingene API'et tilbyr.
+Fullfør rammeverket fra oppgave 4 og sørg for å kunne utføre alle handlingene API'et tilbyr.
 
 ### Server
 Serveren ligger på http://mobile-course.herokuapp.com/
