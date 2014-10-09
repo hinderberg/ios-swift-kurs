@@ -5,38 +5,42 @@
 ## Oppgave 1
 
 Lag en prosjekt og legg inn følgende tester.
-Få testene til å gå grønn uten å modifisere testene:
+Få testene til å gå grønn uten å modifisere verdiene i testen:
 
 ```swift
 import UIKit
 import XCTest
 
 class FizzBuzzTests: XCTestCase {
-  var fizzbuzz: FizzBuzz!
+    var fizzbuzz: FizzBuzz?
 
-  override func setUp() {
-    super.setUp()
+    override func setUp() {
+        super.setUp()
 
-    self.fizzbuzz = FizzBuzz()
-  }
+        self.fizzbuzz = FizzBuzz()
+    }
 
-  func testCheck_returnsFizzBuzz() {
-    XCTAssertEqual(self.fizzbuzz.check(15), "FizzBuzz!")
-  }
+    func testCheck_returnsFizzBuzz() {
+        let string = self.fizzbuzz?.check(15)
+        XCTAssertEqual(string!, "FizzBuzz!")
+    }
 
-  func testCheck_returnsFizz() {
-    XCTAssertEqual(self.fizzbuzz.check(9), "Fizz!")
-  }
+    func testCheck_returnsFizz() {
+        XCTAssertEqual(self.fizzbuzz?.check(9), "Fizz!")
+    }
 
-  func testCheck_returnsBuzz() {
-    XCTAssertEqual(self.fizzbuzz.check(10), "Buzz!")
-  }
+    func testCheck_returnsBuzz() {
+        XCTAssertEqual(self.fizzbuzz?.check(10), "Buzz!")
+    }
 
-  func testCheck_returnsNumber() {
-    XCTAssertEqual(self.fizzbuzz.check(11), "11")
-  }
+    func testCheck_returnsNumber() {
+        XCTAssertEqual(self.fizzbuzz?.check(11), "11")
+    }
 }
 ```
+
+HINT: Klassen du lager vil ikke automatisk bli tilgjengelig i Test target.
+Trykk på klassen du har laget og sett target membership til test target i tillegg til applikasjons target
 
 ## Oppgave 2
 
