@@ -39,8 +39,11 @@ class FizzBuzzTests: XCTestCase {
 }
 ```
 
-HINT: Klassen du lager vil ikke automatisk bli tilgjengelig i Test target.
+HINT:
+Klassen du lager vil ikke automatisk bli tilgjengelig i Test target.
 Trykk på klassen du har laget og sett target membership til test target i tillegg til applikasjons target
+
+Det finnes bug i Xcode 6 og Swift som du må komme deg rundt. Buggen er relatert til tolkning, optionals og testing
 
 ## Oppgave 2
 
