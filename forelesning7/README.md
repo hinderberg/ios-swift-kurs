@@ -363,13 +363,21 @@ thread.isMainThread
 
 ```swift
 
-
-
-
-
-
+// vanligvis
 
 dispatch_queue_t aQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0);
+
+// bug i swift 1.0
+
+extension qos_class_t {
+
+    public var id:Int {
+        return Int(self.value)
+    }
+
+}
+
+let aQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND.id, 0)
 
 ```
 
@@ -505,6 +513,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
 
 ---
 
+<br><br><br>
 # [fit]NSOperation og NSOperationQueue
 
 ---
@@ -558,10 +567,10 @@ eller legg det i en kø
 
 
 
-let backgroundOperation: NSOperation = NSOperation()
+let backgroundOperation = NSOperation()
 backgroundOperation.qualityOfService = .Background
 
-let operationQueue = NSOperationQueue.mainQueue()
+let operationQueue = NSOperationQueue()
 operationQueue.addOperation(backgroundOperation)
 
 ```
@@ -576,6 +585,7 @@ operationQueue.addOperation(backgroundOperation)
 
 ---
 
+<br><br><br>
 # [fit]Snakke med internett
 
 ---
@@ -722,7 +732,7 @@ if let unwrappedError = jsonError {
 
 # SwiftyJSON
 
-Som du har sett i eksemplene ovenfor, så er Swift nøye med typer
+Som du så i det første eksempelet, så er Swift nøye med typer
 
 - SwiftyJSON prøver å hjelpe oss med akkurat dette
 
@@ -816,10 +826,10 @@ __Kan brukes om du lager en app som bare skal fungere på iOS og kun trenger lag
 
 # Hvordan ser det ut?
 
-- Man har en container: `CKCotainer`
+- Man har en kontainer: `CKCotainer`
 - En kontainer består av en public og private: `CKDatabase`
   - Public er tilgjengelig for alle iCloud brukere, mens privat er kun for en bruker
-  - Man kan lytte på notifiaction på data endringer i iCloud og reagere på disse
+  - Man kan lytte på notifications på data endringer i iCloud og reagere på disse
 
 ---
 
@@ -913,9 +923,11 @@ https://github.com/ochococo/Design-Patterns-In-Swift
 
 #[fit]Smidig 2014
 
-- Sitte vakt
-- Gratis inn
+- Sitte vakt av og til
+- Gratis inngang
+- Lœre mer om smidig metoder
 - Middag og billig øl
+- Ta kontakt med: frivillig@smidig.no
 
 ---
 
