@@ -58,7 +58,6 @@ ios-swift-kurs
 
 [Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning7)
 --------------
-
 * Debugging
 * Swift og gjenbruk av kode
   * Bundles
@@ -66,3 +65,10 @@ ios-swift-kurs
 * Tråder og asynkronitet
 * Snakke med internett
 * Cloud Kit
+
+[App extensions](forelesning8)
+--------------
+* Typer app extensions
+* Hvordan fungerer app extensions?
+* Eksempel Today, Share og Action extension
+* Tilgang til nettsider i extensions med JavaScript
