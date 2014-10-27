@@ -1,13 +1,16 @@
 
-# [fit] Velkommen
-### Introduksjon til _Swift_
+## Introduksjon til
+# [fit] Swift
 
 ---
 
-### Hans Magnus Inderberg
-#### SpareBank 1 Mobilbank
-#### Fagleder Mobil
-#### _@hinderberg_
+# Mads Mobæk
+Fagleder frontend
+@madsmobaek
+
+# Hans Magnus Inderberg
+Fagleder mobil
+@hinderberg
 
 ---
 
@@ -43,35 +46,32 @@
 
 ---
 
-#### _Som igjen førte til_
-
-## Introduksjon til Swift
+## _Som igjen førte til_
+# Introduksjon til Swift
 
 ---
 
 # Agenda
 
-1. _Hva er swift?_
-2. _Hvordan ser det ut?_
-2. _Playground_
-3. _De har laget en REPL_
+1. Hva er Swift?
+2. Hvordan ser det ut?
+3. Playground
+4. REPL
 
 ---
 
 # Hva er Swift?
-* _Et programmeringsspråk for iOS og OSX laget av Apple_
-* _De har fjernet C avhengigheten og Swift tar over for Objective-C_
-* _Moderne, Enkelhet og sikkert_
-* _Fungerer side-om-side med C og Objective-C_
-* _Paradigmer som imperativ, OOP og funksjonelt_  
+* Et programmeringsspråk for iOS og OSX laget av Apple
+* Swift tar over for Objective-C
+* Moderne, enkelt og sikkert
+* Fungerer side om side med C og Objective-C
+* Paradigmer som imperativt, OOP og funksjonelt
 
 ^ * Laget av Apple
-* Under utvikling i rundt 4re år
+* Under utvikling i rundt fire år
 * Fjernet avhengighet for å få mer frihet
-* Moderne, Enkelt og sikkert
 * Laget en bro til C og Obj-C
 * Kjente paradigmer som funksjonelt og OOP
-* Hentet inspirasjon fra .NET og F#, List, Javascript
 
 ---
 
@@ -80,11 +80,11 @@
 ---
 
 ```swift
-			   println("Hei hei BEKK")
+			   println("Hello world")
 ```
 
 ^* Dette er et helt program i Swift
-* Printer ut Hei hei BEKK på en ny linje
+* Printer ut Hello world på en ny linje
 
 ---
 
@@ -96,15 +96,14 @@
 
 let shortName: String = "BEKK"
 
-
 var numberOfemployees: Int = 320
 numberOfemployees = 500
 ```
 
 ^ * Konstanter deklareres LET
 * Variabler med VAR
-* Type defineres med kolon også typen
-* Konstant kan bare bli satt en gang, men det må ikke skje ved kompilering.
+* Type defineres med kolon og type
+* Konstant kan bare bli satt en gang, men det må ikke skje ved kompilering
 * Oppfordrer til imutabilitet over mutabilitet
 
 ---
@@ -116,13 +115,12 @@ numberOfemployees = 500
 
 let shortName = "BEKK"
 
-
 var numberOfemployees = 350
 numberOfemployees = 500
 ```
 
 
-^ * Stort fokus punkt i Swift.
+^ * Stort fokus i Swift.
 * * Du skjelden trenger å spesifisere typen. Men typen vil fortsatt vœre der.
 
 ^ * De analyserer både oppover og nedover i type-treet.
@@ -157,7 +155,7 @@ numberOfemployees = 500
 
 
 let n1 = 10, n2 = 8
-let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
+let result = "\(n1) ganger \(n2) er \(n1 * n2)"
 //10 ganger 8 er 80
 ```
 
@@ -170,12 +168,12 @@ let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
 
 # Collection types
 
-_Det finnes to typer collections i Swift_
+Det finnes to typer collections i Swift
 
 <br />
 
-* _Arrays_
-* _Dictionaries_
+* Arrays
+* Dictionaries
 
 
 ^ * De vanlige typene finnes også i Swift.
@@ -190,7 +188,7 @@ _Det finnes to typer collections i Swift_
 let jobs = [String]()
 
 // merk ingen spesifisering av type
-var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
+var jobs = ["Systemutvikler", "Prosjektleder", "Frontendutvikler"]
 
 // Uthenting
 jobs[0]
@@ -202,29 +200,29 @@ Forskjellig fra objective-c er at type inference gjør at disse er typed arrays
 ---
 
 ```swift
-// Modifisering
+// Manipulering
 
 jobs.append("Rådgiver")
-jobs += ["Rådgiver", "Backend-Utvikler"]
-jobs[0] = "Backend-Utvikler"
-jobs[2..<5] = ["Rådgiver", "Backend-Utvikler", "Prosjektleder"]
+jobs += ["Rådgiver", "Backendutvikler"]
+jobs[0] = "Backendutvikler"
+jobs[2..<5] = ["Rådgiver", "Backendutvikler", "Prosjektleder"]
 ```
 
 ---
 
-# Dicionary
+# Dictionary
 
 ```swift
 // Deklaring
 let emptyDictionary = [String: Float]()
-var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
+var jobs = ["Rådgiver": 35, "Systemutvikler": 21, "Prosjektleder": 32]
 
 // Uthenting
 jobs["Systemutvikler"]
 
 // Modifisering
-people["Rådgiver"] = 45
-people["Prosjektleder"] = 81
+jobs["Rådgiver"] = 45
+jobs["Prosjektleder"] = 81
 ```
 
 ^ I dicionary så holdes ting på normalt nivå og mange av dere kjenner nok igjen dette fra andre språk.
@@ -233,12 +231,10 @@ people["Prosjektleder"] = 81
 
 # Løkker
 
-_Det finnes fire typer løkker_
-
-* _while_
-* _do-while_
-* _for_
-* _for-in_
+* while
+* do-while
+* for
+* for-in
 
 ^ Ikke noe nytt her altså, og de gjøres på vanlig måte
 
@@ -267,14 +263,14 @@ for nr in 1..<10 {
 # Control flow
 <br />
 
-* _if_
-* _switch_
+* if
+* switch
 
 ---
 
 # if
 
-* _Ikke noe nytt, du har kanskje sett at paranteser er valgfritt_
+* Ikke noe nytt, men parenteser er valgfritt
 
 ```swift
 if age <= 10 {
@@ -290,24 +286,21 @@ if age <= 10 {
 
 # switch
 
-_Her har de gått banans_ ;-)
-
-* _Du trenger ikke bruke break etter hver case_
-* _Bruk hvilke som helst object i en switch_
-* _Hvis du utelater default case må switch'ene matche alle case, hvis ikke blir det_ compile error
-
----
-
 ```swift
 switch age {
-case 1,2,3,4,5,6,7,8,9,10:
-    println("Du er et barn!")
-case 80...100:
-    println("Du er gammal!")
-default:
-    println("I mellom en plass?;)")
+    case 1,2,3,4,5,6,7,8,9,10:
+        println("Du er et barn!")
+    case 80...100:
+        println("Du er gammal!")
+    default:
+        println("I mellom en plass?;)")
 }
 ```
+^
+* Du trenger ikke bruke break etter hver case
+* Bruk hvilke som helst object i en switch
+* Hvis du utelater default case må switch'ene matche alle case, hvis ikke blir det compile error
+
 
 ---
 
@@ -338,15 +331,59 @@ default:
 
 ---
 
+# Enums
+
+```swift
+enum Level {
+    case Consultant
+    case Senior
+    case Manager
+}
+
+// eller
+enum Level {
+    case Consultant, Senior, Manager
+}
+
+```
+
+---
+
+# Enums Raw og Associated verdier
+
+```swift
+// Enumeration Raw Values
+enum ASCIIControlCharacter: Character {
+    case Tab = "\t"
+    case LineFeed = "\n"
+    case CarriageReturn = "\r"
+}
+
+// Enumeration Associated Values
+enum Barcode {
+    case UPCA(Int, Int, Int, Int)
+    case QRCode(String)
+}
+var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
+productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
+```
+
+^Kan ha konstruktører, funksjoner, variabler
+
+---
+
 # Optionals
 
 
-^ , mange måter i objective-c, NSNull, null, nil, NULL, -1...etc
+^ mange måter i objective-c, NSNull, null, nil, NULL, -1...etc
 * Rammeverk og hva bruker de? Løst med optionals
 
 ---
 
 ```swift
+
+
+
 var possibleWelcomeMessage: String? = "Halloo"
 
 if possibleWelcomeMessage == nil {
@@ -364,6 +401,12 @@ Da får man kompile error
 ---
 
 ```swift
+
+
+
+
+
+
 if let welcomeMessage = possibleWelcomeMessage {
 		println(welcomeMessage)
 }
@@ -389,25 +432,27 @@ if let street = bekk.people.first?.address?.street {
 ---
 
 # Funksjoner
-<br />
-
-* _Deklareres med `func`_
-* _Returtypen defineres til slutt_
 
 ---
 
+# Funksjoner
+
+
 ```swift
 func printName() {
-  println("Olga")
+  println("Swift")
 }
 
 printName()
 ```
 
+^* Deklareres med `func`
+
 ---
 
+# Funksjoner med parametere
+
 ```swift
-// med parametre
 // default konstanter
 // hvis ikke spesifisert at de skal vœre variabler
 // med da blir de kopiert. Med mindre man bruker `inout`
@@ -416,7 +461,7 @@ func printName(name: String) {
   println(name)
 }
 
-printName("Olga")
+printName("Swift")
 ```
 
 ---
@@ -424,12 +469,15 @@ printName("Olga")
 ```swift
 // med default verdi
 
-func printName(name: String = "Olga") {
+func printName(name: String = "Swift") {
   println("Hallo \(name)!")
 }
 printName()
-printName(name: "Geir")
+printName(name: "Swift")
 ```
+
+^name: blir en del av signaturen
+
 ---
 
 # Funksjoner med returverdi
@@ -442,7 +490,7 @@ func buildName(firstName: String, lastName: String) -> String {
 	return "\(firstName) \(lastName)"
 }
 
-let fullName = buildName("Olga", "Geiresen")
+let fullName = buildName("Tim", "Cook")
 ```
 ---
 
@@ -457,13 +505,13 @@ func buildName(
         return "\(firstName) \(lastName)"
 }
 
-buildName(yourFirstName: "Olga", lastName: "Geiresen")
+buildName(yourFirstName: "Tim", lastName: "Cook")
 ```
 ---
 
-# Funksjoner med tuple/flerereturverdier
+# Funksjoner med multiple return
 
-_Grupperer flere verdier inn i en verdi. Godt egnet i funksjoner som skal returnere flere verdier - ikke så godt for komplekse datastrukturer._
+Godt egnet i funksjoner som skal returnere flere verdier - ikke så godt for komplekse datastrukturer.
 
 ```swift
 
@@ -489,21 +537,6 @@ func refreshWebPage() -> (code: Int, message: String) {
 let status = refreshWebPage()
 println("Fikk status \(status.code): \(status.message)")
 ```
----
-
-# Funksjoner med n param av samme type
-
-```swift
-func total(numbers: Double...) -> Double {
-    var total: Double = 0
-    for number in numbers {
-        total += number
-    }
-    return total;
-}
-
-total(1, 2, 3, 4, 5)
-```
 
 ---
 
@@ -516,7 +549,7 @@ func addTwoInts(a: Int, b: Int) -> Int {
 
 func printMathResult(mathFunction: (Int, Int) -> Int,
 	a: Int, b: Int) {
-    println("Ble: \(mathFunction(a, b))")
+    println("Resultat: \(mathFunction(a, b))")
 }
 
 printMathResult(addTwoInts, 3, 5)
@@ -524,9 +557,7 @@ printMathResult(addTwoInts, 3, 5)
 
 ---
 
-# Nestede funksjoner
-
----
+# Nøstede funksjoner
 
 ```swift
 func jump(method: String) -> (Int) -> String {
@@ -552,6 +583,10 @@ println(jump("")(2))
 
 # Closures
 
+---
+
+# Closures
+
 ```swift
 
 
@@ -563,36 +598,6 @@ println(jump("")(2))
 ```
 
 ^ Samme som funksjoner, bare uten navn!
-
----
-
-# Closures som parametre
-
-```swift
-func repeat(count: Int, task: () -> ()) {
-	for i in 0..<count {
-		task()
-	}
-}
-
-repeat(2, {
-	println("BEKK!")
-})
-```
-
----
-
-# Trailing closure
-
-```swift
-
-
-
-
-repeat(2) {
-	println("BEKK!")
-}
-```
 
 ---
 
@@ -615,6 +620,7 @@ reversed = sorted(names, { (s1: String, s2: String) -> Bool in
 reversed = sorted(names, { s1, s2 in return s1 > s2 } )
 ```
 ^ Closures på speed
+Dropp typer
 
 ---
 
@@ -635,7 +641,7 @@ reversed = sorted(names, { s1, s2 in s1 > s2 } )
 
 
 
-reversed = sorted(names, { $0 > $1 }
+reversed = sorted(names, { $0 > $1 })
 ```
 
 ---
@@ -651,14 +657,49 @@ reversed = sorted(names, >)
 
 ---
 
+# Closures som parametre
+
+```swift
+func repeat(count: Int, task: () -> ()) {
+    for i in 0..<count {
+        task()
+    }
+}
+
+repeat(2, {
+    println("BEKK!")
+})
+```
+
+---
+
+# Trailing closure
+
+```swift
+
+
+
+
+repeat(2) {
+    println("BEKK!")
+}
+```
+
+
+---
+
+# Klasser og Structs
+
+---
+
 # Klasser og Structs
 <br />
 
-* _Klasser = Reference Types_
-* _Structs = Value Types_
+* Klasser = Pass by reference
+* Structs = Pass by value
 
-^ * Value Types blir kopiert når man assigner dem til en ny variabel eller konstant
-* Reference types øker bare antall pekere til det samme objektet.
+^ * Reference types øker bare antall pekere til det samme objektet.
+* Value types blir kopiert
 
 ---
 
@@ -694,7 +735,7 @@ Et eksempel på stored properties
 * _Arv_
 * _Type casting - man kan sjekke og tolke typen runtime_
 * _`deinitializers` for opprydding når instansen blir kastet_
-* _Referanse telling - mer enn en referanse til en klasseinstans_
+* _Referansetelling - mer enn en referanse til en instans_
 
 ---
 
@@ -739,7 +780,7 @@ klasser, structs, metoder og properties._
 
 
 public class Address {}
-internal class Address {}
+internal class Address {} // default
 private class Address {}
 ```
 
@@ -753,14 +794,14 @@ private class Address {}
 class Employee {
     var address: Address?
     var salary: Double = 100000
-    var bonusPercent = 0.20
-
+    var bonusFactor = 0.20
+    
     var bonus: Double {
         get {
-            return self.salary * bonusPercent;
+            return self.salary * bonusFactor;
         }
         set(newBonus) { // må ikke ta inn noe, da kan man bruke newValue i stedet
-            self.bonusPercent = newBonus
+            self.bonusFactor = newBonus
         }
     }
 }
@@ -768,72 +809,32 @@ class Employee {
 
 ---
 
-# READ-only
-
-```swift
-class Employee {
-		var address: Address?
-		var salary: Double = 100000
-		var bonusPercent = 0.20
-
-		var bonus: Double {
-			return self.salary * bonusPercent;
-		}
-}
-```
-
----
-
-# Obseravble properties
+# Observable properties
 
 ```swift
 class Employee {
     var address: Address?
     var salary: Double = 100000
-    var bonusPercent = 0.20
     var invoicing: Double = 100.00 {
         willSet(newInvoicing) {
-            println("I ferd med å ny faktueringsgrad \(newInvoicing)")
+            println("I ferd med å sette ny faktueringsgrad \(newInvoicing)")
         }
         didSet {
             if invoicing > oldValue  {
-                println("Bedret faktueringsgrad med \(invoicing - oldValue) steg")
+                println("Økte faktueringsgrad med \(invoicing - oldValue)")
             }
         }
     }
-    var bonus: Double {
-        get {
-            return self.salary * bonusPercent;
-        }
-        set(newBonus) { // må ikke ta inn noe, da kan man bruke newValue i stedet
-            self.bonusPercent = newBonus
-        }
-    }
 }
 ```
 
 ---
 
-```swift
-var invoicing: Double = 100.00 {
-	willSet(newInvoicing) {
-		println("I ferd med å ny faktueringsgrad \(newInvoicing)")
-	}
-	didSet {
-		if invoicing > oldValue  {
-			println("Bedret faktueringsgrad med \(invoicing - oldValue) steg")
-		}
-	}
-}
-```
-
----
-
-# Metoder sier du?
+# Metoder?
 <br /><br /><br />
 
 
-_Fungerer likt som funksjoner_
+_Som funksjoner - bare at nå er de inne i en klasse_
 
 ---
 
@@ -857,25 +858,17 @@ struct Position {
 
 # Arv
 
----
-
 ```swift
-class Employee: Human {
-    var firm = "Bekk Consulting"
-
-    override func scream() {
-        println("Waaaaaaaaaaa")
+class SomeSubclass: SomeSuperclass {
+    var message = "I'm a subclass!"
+    
+    override func speak() {
+        println("Subclass says \(message)")
     }
-
+    
     override var description: String {
-        return super.description + " er ansatt i \(firm)"
+        return super.description + " message: " + message
     }
-
-    override var confidence: Double {
-      didSet {
-          confidence = confidence * 200
-      }
-  	}
 }
 ```
 
@@ -883,55 +876,7 @@ class Employee: Human {
 
 ---
 
-# Enums
-
-```swift
-enum Level {
-	case Consultant
-	case Senior
-	case Manager
-}
-
-// eller
-enum Level {
-	case Consultant, Senior, Manager
-}
-
-```
-
----
-
-# Enums Raw og Associated verdier
-
-```swift
-// Enumeration Raw Values
-enum ASCIIControlCharacter: Character {
-    case Tab = "\t"
-    case LineFeed = "\n"
-    case CarriageReturn = "\r"
-}
-
-// Enumeration Associated Values
-enum Barcode {
-    case UPCA(Int, Int, Int, Int)
-    case QRCode(String)
-}
-var productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
-productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
-```
-
-^Kan ha konstruktører, funksjoner, variabler
-
----
-
 # Protocols
-
-* _Ganske likt Objective-C, brukes fortsatt til delegate pattern_
-* _Samme som interface i Java og andre språk_
-* _Definerer opp et sett med metoder, properties, klasse metoder, operatorer og subscripts som passer en bestemt funksjonalitet_
-* _Inneholder ingen implementasjonskode_
-
----
 
 ```swift
 protocol Firm {
@@ -944,22 +889,16 @@ protocol Firm {
 }
 ```
 
----
-
-# Extentions
-
-* _Utvide funksjonalitet for en bestemt type_
-
----
-
-* _Vanlig og static kalkulerte properties_
-* _Definere nye instansmetoder og klassemetoder_
-* _Nye init metoder_
-* _Nye subscripts_
-* _Definere ny nestet type_
-* _Gir mulighet å implementere en protocol for en eksiterende type_
+^* Ganske likt Objective-C, brukes fortsatt til delegate pattern
+* Samme som interface i Java og andre språk
+* Definerer opp et sett med metoder, properties, klasse metoder, operatorer og subscripts som passer en bestemt funksjonalitet
+* Inneholder ingen implementasjonskode
 
 ---
+
+# Extensions
+
+* _Utvider funksjonalitet for en bestemt type_
 
 ```swift
 extension String {
@@ -975,8 +914,8 @@ name.uppercase // "HANS MAGNUS"
 
 # Generics
 
-* _Mye av Swift sitt standard bibliotek er bygd med generics kode_
-* _For eksempel er Array og Dicionary typene generic collections_
+* Mye av Swift sitt standard bibliotek er bygd på generics
+* For eksempel er Array og Dicionary typene generic collections
 
 ---
 
@@ -992,33 +931,26 @@ printSequence(["Aa", "Bb"])
 printSequence(["A": "B", "B": "A"])
 ```
 
+
+---
+
+# Playground & REPL
+
 ---
 
 # Playground
 
-* _Ligner på Scala Workspaces og F# interactive mode_
-* _Kjører kode forløpende_
-* _Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug_
-
----
-
-# Playground Demo
+* Ligner på Scala Workspaces og F# interactive mode
+* Kjører kode forløpende
+* Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug
 
 ---
 
 # REPL
 
-###### _Apple har laget read–eval–print loop_
-###### _Tilgjengelig både når man debugger og i terminalen_
-###### _Startes med ```xcrun swift``` i terminalen_
-
----
-
-# For å kjøre Swift i terminalen
-## må man sette nyeste xcode med
-## _`xcode-select`_
-
-_xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer_
+* Read–eval–print loop
+* Tilgjengelig både når man debugger og i terminalen
+* Startes med ```xcrun swift``` i terminalen
 
 ---
 
@@ -1039,14 +971,22 @@ if arguments.count != 1 {
 let path = arguments[0]
 println("Finding wallpaper at path: \(path)")
 
+
+// continues on next slide
+```
+
+---
+
+```swift
 let workspace = NSWorkspace.sharedWorkspace()
 let screen = NSScreen.mainScreen()
 
-let potensialImgUrl : NSURL? = NSURL.fileURLWithPath(path)
+let potentialImgUrl : NSURL? = NSURL.fileURLWithPath(path)
 var error : NSError?
 
-if let imageUrl = potensialImgUrl {
-    let result : Bool = workspace.setDesktopImageURL(imageUrl, forScreen: screen, options: nil, error: &error)
+if let imageUrl = potentialImgUrl {
+    let result : Bool = workspace.setDesktopImageURL(imageUrl, forScreen: screen!, 
+    options: nil, error: &error)
 
     if result {
         println("Wallpaper set!")
@@ -1060,16 +1000,13 @@ if let imageUrl = potensialImgUrl {
 
 ---
 
-# Swift er ikke ferdig
+# Swift v1.1 med XCode 6.1
+## Språket er under aktiv utvikling
 
 ^Ikke stabilt før om omtrent 2 år
 * Kan brukes i dag
 * Xcode embedder en liten runtime i appen
 * Så runtimen vil ikke ligge på iOS før om noen år
-
----
-
-# [fit] Spørsmål _**[?]**_
 
 ---
 
