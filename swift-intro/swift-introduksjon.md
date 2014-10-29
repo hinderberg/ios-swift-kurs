@@ -55,8 +55,7 @@ Fagleder mobil
 
 1. Hva er Swift?
 2. Hvordan ser det ut?
-3. Playground
-4. REPL
+3. Playground & REPL
 
 ---
 
@@ -273,12 +272,12 @@ for nr in 1..<10 {
 * Ikke noe nytt, men parenteser er valgfritt
 
 ```swift
-if age <= 10 {
-    println("Barn")
-} else if age >= 80 {
-    println("Gammel")
+if batteryLevel <= 10 {
+    indicator.backgroundColor = .redColor()
+} else if batteryLevel >= 80 {
+    indicator.backgroundColor = .greenColor()
 } else {
-    println("I mellom en plass?;)")
+    indicator.backgroundColor = .blackColor()
 }
 ```
 
@@ -287,46 +286,21 @@ if age <= 10 {
 # switch
 
 ```swift
-switch age {
-    case 1,2,3,4,5,6,7,8,9,10:
-        println("Du er et barn!")
+switch batteryLevel {
+    case 0,1,2,3,4,5,6,7,8,9,10:
+        println("Lavt batteri")
     case 80...100:
-        println("Du er gammal!")
+        println("Masse batteri")
     default:
-        println("I mellom en plass?;)")
+        println("Passe med batteri")
 }
 ```
 ^
-* Du trenger ikke bruke break etter hver case
-* Bruk hvilke som helst object i en switch
-* Hvis du utelater default case må switch'ene matche alle case, hvis ikke blir det compile error
-
-
----
-
-# Du kan switche på instanser
-
-``` swift
-@IBAction func buttonTouched(sender : UIButton) {
-	switch sender {
-	  case childButton:
-	    println("Du er et barn!")
-	  case oldisButton:
-	    println("Du er gammal!")
-	  default:
-	    println("I mellom en plass?;)")
-	}
-}
-```
-
-^ Man kan også switche på instanster av forskjellige typer.
-* En knapp
-
----
-
-++++
-
-^ * regulœre utrykk,
+* break
+* hvilket som helst objekt
+* må matche alle caser eller bruke default
+* Switche på instanster
+* regulœre utrykk,
 * where clause etc
 
 ---
@@ -369,6 +343,7 @@ productBarcode = .QRCode("ABCDEFGHIJKLMNOP")
 ```
 
 ^Kan ha konstruktører, funksjoner, variabler
+Barcode med tuple med 4 verdier
 
 ---
 
@@ -466,8 +441,9 @@ printName("Swift")
 
 ---
 
+# Funksjoner med defaultverdier
+
 ```swift
-// med default verdi
 
 func printName(name: String = "Swift") {
   println("Hallo \(name)!")
@@ -940,15 +916,15 @@ printSequence(["A": "B", "B": "A"])
 
 # Playground
 
-* Ligner på Scala Workspaces og F# interactive mode
-* Kjører kode forløpende
+* Ligner på Scala worksheets
+* Kjører kode forløpende i XCode
 * Test ut nye algoritme, tester, utforsk apier, rett en bestemt bug
 
 ---
 
 # REPL
 
-* Read–eval–print loop
+* Read–eval–print loop, som i Python, Ruby m.fl.
 * Tilgjengelig både når man debugger og i terminalen
 * Startes med ```xcrun swift``` i terminalen
 
