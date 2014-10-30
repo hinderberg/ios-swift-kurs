@@ -28,26 +28,22 @@ Fagleder mobil
 
 ---
 
-## Som førte til reaksjoner som dette
-
 ![fit inline](tweet-trash.png)
 
 ^ * En som kaster Objective-C boken sin.
 
+
 ---
 
-## og dette
+![fit inline](iknowios.png)
 
-![100% inline](tweet-mattt.png)
+---
+
+![150% inline](tweet-mattt.png)
 
 ^ * Eller som Matt Thompson
 * Alle er nybegynnere samtidig
 * Ingen bedre tid enn nå til å starte med iOS og OSX utvikling
-
----
-
-## _Som igjen førte til_
-# Introduksjon til Swift
 
 ---
 
