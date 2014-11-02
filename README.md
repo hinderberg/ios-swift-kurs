@@ -72,3 +72,17 @@ ios-swift-kurs
 * Hvordan fungerer app extensions?
 * Eksempel Today, Share og Action extension
 * Tilgang til nettsider i extensions med JavaScript
+
+[Multimedia](forelesning9)
+--------------
+* Enkle 2D spill og Swift
+* Video
+* Lyd
+
+[Persistering](forelesning10)
+--------------
+* Hvor filer lagres
+* Enkel lesing og skriving til disk
+* NSUserDefaults
+* NSKeyedArchiver / NSKeyedUnarchiver
+* Core Data
