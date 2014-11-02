@@ -1,7 +1,7 @@
 ios-swift-kurs
 ==============
 
-[Intro og swift del 1](forelesning1)
+[Intro og swift del 1](forelesning01)
 --------------
 * Praktisk informasjon
 * Kort intro til til OSX
@@ -9,7 +9,7 @@ ios-swift-kurs
 * XCode
 * Swift
 
-[Swift del 2](forelesning2)
+[Swift del 2](forelesning02)
 --------------
 * Funksjoner
 * Closures
@@ -19,7 +19,7 @@ ios-swift-kurs
 * Metoder
 * Access control
 
-[Swift del 3](forelesning3)
+[Swift del 3](forelesning03)
 --------------
 * Subscripts, Kontrutører og Arv
 * deinit og ARC
@@ -29,7 +29,7 @@ ios-swift-kurs
 * Extentions
 * Generics
 
-[Intro til iOS-utvikling](forelesning4)
+[Intro til iOS-utvikling](forelesning04)
 --------------
 * Sette opp et nytt iOS prosjekt i XCode
 * Komponentene i en iOS app
@@ -38,7 +38,7 @@ ios-swift-kurs
 * MVC
 * View og view controllers
 
-[Container controllere, patterns og auto layout](forelesning5)
+[Container controllere, patterns og auto layout](forelesning05)
 --------------
 * Delegate pattern
 * UINavigationController
@@ -47,7 +47,7 @@ ios-swift-kurs
 * Auto Layout
 * Unified Storyboard og Size classes
 
-[Views og animasjoner](forelesning6)
+[Views og animasjoner](forelesning06)
 --------------
 * Viewkonsepter
 * Å instansiere views
@@ -56,7 +56,7 @@ ios-swift-kurs
 * Gestures
 * Animasjoner
 
-[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning7)
+[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning07)
 --------------
 * Debugging
 * Swift og gjenbruk av kode
@@ -66,14 +66,14 @@ ios-swift-kurs
 * Snakke med internett
 * Cloud Kit
 
-[App extensions](forelesning8)
+[App extensions](forelesning08)
 --------------
 * Typer app extensions
 * Hvordan fungerer app extensions?
 * Eksempel Today, Share og Action extension
 * Tilgang til nettsider i extensions med JavaScript
 
-[Multimedia](forelesning9)
+[Multimedia](forelesning09)
 --------------
 * Enkle 2D spill og Swift
 * Video
