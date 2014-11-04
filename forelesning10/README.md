@@ -323,7 +323,6 @@ workout.entries = 0
 var error: NSError?
 if moc.save(&error) {
     workouts.append(workout)
-    //tableView.reloadData()
 } else {
     println("Save failed \(error)")
 }
@@ -338,9 +337,7 @@ if moc.save(&error) {
 workout.entries = workout.entries.integerValue + 1
 
 var error: NSError?
-if(moc.save(&error)) {
-    tableView.reloadData()
-} else {
+if(!moc.save(&error)) {
     println("Failed to update: \(error)")
 }
 ```
@@ -352,6 +349,9 @@ if(moc.save(&error)) {
 ```swift
 //let workoutToRemove = workouts[indexPath.row]
 moc.deleteObject(workoutToRemove)
+if(!moc.save(&error)) {
+    println("Failed to delete: \(error)")
+}
 ```
 
 ---
@@ -366,13 +366,97 @@ println("\(count) øvelser registrert")
 
 ---
 
+# NSFetchedResultsController
+
+* No more `tableView.reloadData()`!
+* Går hånd i hanske med UITableView
+* Gir gruppering, caching, synkronisering av tableview mot data
+* Abstraksjon rundt fetchRequest og resultatene
+* Må ha minst en sortDescriptor
+
+---
+
+# NSFetchedResultsController API
+
+```swift
+
+// Instansier (eks. i viewDidLoad)
+NSFetchedResultsController(fetchRequest: query, 
+        managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+
+// Hent data
+fetchedResultsController.performFetch(&error)
+
+// Få antall rader i section:
+fetchedResultsController.sections![section].numberOfObjects
+
+// Hent ut objekt med:
+fetchedResultsController.objectAtIndexPath(indexPath) 
+```
+
+---
+
+# NSFetchedResultsController - automatisk oppdatering av tableview
+
+```swift
+
+class ViewController: UIViewController, UITableViewDataSource, 
+    UITableViewDelegate,NSFetchedResultsControllerDelegate {
+
+    // I ViewDidLoad, new opp NSFetchedResultsController og sett delegate:
+    // fetchedResultsController.delegate = self
+
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates()
+    }
+
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
+    }
+}
+```
+
+---
+
+```swift
+func controller(controller: NSFetchedResultsController, 
+    didChangeObject anObject: AnyObject, 
+    atIndexPath indexPath: NSIndexPath, 
+    forChangeType type: NSFetchedResultsChangeType, 
+    newIndexPath: NSIndexPath) {
+        
+    switch type {
+        case .Insert:
+            self.tableView.insertRowsAtIndexPaths([newIndexPath], 
+                withRowAnimation: UITableViewRowAnimation.Automatic)
+        case .Update:
+            if let cell = self.tableView.cellForRowAtIndexPath(indexPath) {
+                self.configureCell(cell, indexPath: indexPath)
+            }
+        case .Move:
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        default:
+            break
+    }
+        
+}
+```
+
+---
+
 # Mer
 
-* NSFetchedResultsController
-* Validering
-* Relasjoner
-* Versjonering
+* Validering - sett i datamodell. Populerer `error` ved feil
+* Relasjoner - sett i datamodell. En-en, en-mange, mange-mange
+* Versjonering - når du endrer datamodellen mellom releaser
 * Core Data i iCloud
+
+---
+
+# Keychain
 
 ---
 
