@@ -2,20 +2,17 @@
 # _PG5600_ iOS programmering
 ## Forelesning 1
 
+#### Sider å lese før forelesning: 3-11 i Swift Programming-boka
+
 ---
 
-### Hans Magnus Inderberg
-#### _@hinderberg_
-
-### Mads Mobæk
-#### _@madsmobaek_
+### Håkon bogen
 
 ---
 
 # Agenda
 
 * Praktisk informasjon
-* Kort intro til til OSX
 * iOS økosystem
 * XCode
 * Swift
@@ -25,29 +22,23 @@
 # Praktisk informasjon
 
 * Ikke lenger Objective-C, men Swift
-* Utgår: Objective-C Programming: The Big Nerd Ranch Guide
-* Inngår: The Swift Programming Language (fra iBooks)
+* The Swift Programming Language (Swift 2 prerelease)
+* iOS-programming with Swift
 * Deleksamen og innlevering
-
----
-
-# Kort intro til til OSX
-
-DEMO
 
 ---
 
 # iOS økosystem
 
 * Portal: _developer.apple.com_
-* Enheter: _iPhone, iPad_
+* Enheter: _iPhone, iPad, Apple Watch_
 * Plattform: _iOS / Cocoa Touch / Objective-C/Swift_
 * Utviklingsverktøy: _XCode, Instruments, Bots_
 * Distribusjon: _App Store, iTunes Connect_
 
 ---
 
-# XCode
+# XCode Beta 6
 
 ## DEMO
 
@@ -62,7 +53,7 @@ DEMO
 * _De har fjernet C avhengigheten og Swift tar over for Objective-C_
 * _Fokus på Enkelhet og sikkerhet_
 * _Moderne og kraftig_
-* _Fungerer side-om-side med C og Objetice-C_
+* _Fungerer side-om-side med C og Objetive-C_
 * _Paradigmer som imperativ, OOP og funksjonelt_  
 
 ^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
@@ -79,7 +70,7 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 ---
 
 ```swift
-			   println("Hello fellow coder!")
+			   println("Hello world")
 ```
 
 ---
