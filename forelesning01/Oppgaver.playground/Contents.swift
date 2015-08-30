@@ -16,7 +16,6 @@ import UIKit
 
 
 
-
 /*:
 ## Oppgave 2
 
@@ -125,7 +124,7 @@ let numberOfLaunches = [19, 55, 135, 1]
 
 Denne oppgaven er ekstra utfordrende og må løses utenfor playground. I terminalen, kjør først:
 
-xcode-select -s /Applications/Xcode-Beta.app/Contents/Developer
+xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
 
 Slik at du kan kjøre swift fra kommandolinjen.
 
