@@ -41,6 +41,7 @@ github.com/haaakon
 
 # XCode 7 Beta 6 
 
+## last ned på https://developer.apple.com/xcode/downloads/
 ## DEMO
 
 ---
@@ -405,8 +406,9 @@ _xcode-select -s /Applications/Xcode-beta.app/Contents/Developer_
 
 # Oppgaver
 
-## Se [Øvingsoppgavene](oppgaver1.md)
+##       http://bit.do/forelesning1
 
-#### Foiler basert på fjorårets foiler av
+
+#### Forelesningen er basert på fjorårets foiler, lage at
 #### Hans Magnus Inderberg og Mads Mobæk
 
