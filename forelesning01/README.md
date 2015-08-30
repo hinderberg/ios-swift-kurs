@@ -2,11 +2,12 @@
 # _PG5600_ iOS programmering
 ## Forelesning 1
 
-#### Sider å lese før forelesning: 3-11 i Swift Programming-boka
+#### Sider å lese: 3-11 i TSPL (Swift 2 prerelease)
 
 ---
 
 ### Håkon bogen
+github.com/haaakon
 
 ---
 
@@ -22,9 +23,9 @@
 # Praktisk informasjon
 
 * Ikke lenger Objective-C, men Swift
-* The Swift Programming Language (Swift 2 prerelease)
-* iOS-programming with Swift
-* Deleksamen og innlevering
+* The Swift Programming Language (Swift 2 prerelease)  - Apple
+* iOS-programming with Swift - O'Reilly
+* Deleksamen og innlevering 
 
 ---
 
@@ -38,7 +39,7 @@
 
 ---
 
-# XCode Beta 6
+# XCode 7 Beta 6 
 
 ## DEMO
 
@@ -51,8 +52,8 @@
 # Hva er Swift?
 * _Et programmeringsspråk for iOS og OSX laget av Apple_
 * _De har fjernet C avhengigheten og Swift tar over for Objective-C_
-* _Fokus på Enkelhet og sikkerhet_
-* _Moderne og kraftig_
+* _Fokus på enkelhet og sikkerhet_
+* _Moderne og kraftig - inspirert at andre moderne språk_
 * _Fungerer side-om-side med C og Objetive-C_
 * _Paradigmer som imperativ, OOP og funksjonelt_  
 
@@ -69,9 +70,8 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 
 ---
 
-```swift
-			   println("Hello world")
-```
+### Skrive til console
+			   print("Hello world")
 
 ---
 
@@ -398,7 +398,7 @@ switch sender {
 ## må man sette nyeste xcode med
 ## _`xcode-select`_
 
-_xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer_
+_xcode-select -s /Applications/Xcode-beta.app/Contents/Developer_
 
 
 ---
@@ -406,3 +406,7 @@ _xcode-select -s /Applications/Xcode6-Beta6.app/Contents/Developerents/Developer
 # Oppgaver
 
 ## Se [Øvingsoppgavene](oppgaver1.md)
+
+#### Foiler basert på fjorårets foiler av
+#### Hans Magnus Inderberg og Mads Mobæk
+
