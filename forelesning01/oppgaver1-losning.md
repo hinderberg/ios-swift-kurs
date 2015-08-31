@@ -14,6 +14,6 @@ let sorted = input?.componentsSeparatedByString("\n").sort({ (s1, s2) -> Bool in
     return s2 < s1
 })
 
-print(sorted!.joinWithSeparator(","))
+print(sorted!.joinWithSeparator(", "))
 
 ```
