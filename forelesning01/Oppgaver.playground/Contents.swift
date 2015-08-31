@@ -86,7 +86,7 @@ Forventet resultat
 /*:
 ## Oppgave 8
 
-Lag en dictionary med 5 key-value par, loop over den og skriv ut key og value med println
+Lag en dictionary med 5 key-value par, loop over den og skriv ut key og value med print
 
 */
 
@@ -98,7 +98,7 @@ Lag en dictionary med 5 key-value par, loop over den og skriv ut key og value me
 Lag et nytt iOS prosjekt i Xcode av typen “Single View Application”.
 1. Finn det stedet som kalles når applikasjonen starter opp
 2. Definer opp streng konstanter for title, beskjed og knapp.
-3. Lag et UIAlertController som bruker konstantene du har definert.
+3. Lag et UIAlertView som bruker konstantene du har definert.
 4. Kall en metode .show på alert view instansen.
 5. Kjør simulatoren og verifiser at tekststrengen dukker opp.
 */
@@ -115,7 +115,6 @@ let numberOfLaunches = [19, 55, 135, 1]
 //:    Falcon 9 : 55 launches
 //:    ...
 //:    My water bottle-rocket : 1 launch        // merk dropp genitivs-s når det er kun 1 launch
-
 
 
 

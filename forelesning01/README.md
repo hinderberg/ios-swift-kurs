@@ -32,7 +32,7 @@ github.com/haaakon
 # iOS økosystem
 
 * Portal: _developer.apple.com_
-* Enheter: _iPhone, iPad, Apple Watch_
+* Enheter: _iPhone, iPad, Apple Watch, (Apple TV?)_
 * Plattform: _iOS / Cocoa Touch / Objective-C/Swift_
 * Utviklingsverktøy: _XCode, Instruments, Bots_
 * Distribusjon: _App Store, iTunes Connect_
@@ -41,7 +41,9 @@ github.com/haaakon
 
 # XCode 7 Beta 6 
 
-## last ned på https://developer.apple.com/xcode/downloads/
+* last ned på https://developer.apple.com/xcode/downloads/
+
+
 ## DEMO
 
 ---
@@ -53,10 +55,9 @@ github.com/haaakon
 # Hva er Swift?
 * _Et programmeringsspråk for iOS og OSX laget av Apple_
 * _De har fjernet C avhengigheten og Swift tar over for Objective-C_
-* _Fokus på enkelhet og sikkerhet_
-* _Moderne og kraftig - inspirert at andre moderne språk_
+* _Moderne og kraftig - inspirert at andre moderne språk - Python, Ruby, C#_
 * _Fungerer side-om-side med C og Objetive-C_
-* _Paradigmer som imperativ, OOP og funksjonelt_  
+* _Objektorientert, Imperativt, Funksjonelt_
 
 ^ Swift er laget av Apple og tar i bruk mange kjente paradigmer og  som vi kjenner fra andre språk.
 De sier at språket har fokus på sikkerhet og det merkes ved at kompileren er
@@ -72,14 +73,20 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 ---
 
 ### Skrive til console
+
+<br>
+
+```swift
 			   print("Hello world")
+			   
+``` 
 
 ---
 
 # Konstanter og Variabler
 
 ```swift
-let shortName: String = "NITH"
+let schoolName: String = "Westerdals ACT"
 
 
 var numberOfemployees: Int = 320
@@ -89,7 +96,7 @@ numberOfemployees = 500
 ^ Konstanter deklareres med LET og variabler med VAR
 En konstant kan bare bli satt en gang, men det må ikke skje ved kompilering.
 I Swift er det foretrukket å bruke konstanter og imutable verdier, med mindre noe skal endre seg
-Dette vil blant annet gjøre det enklere i multi-treding og enklere for kompileren.
+Dette vil blant annet gjøre det enklere i multi-trading og enklere for kompileren.
 
 ---
 
@@ -99,7 +106,7 @@ var numberOfemployees = 350
 numberOfemployees = 500
 
 
-let shortName = "NITH"
+let schoolName = "Westerdals ACT"
 ```
 
 ^Type interence er et stort fokus punkt i Swift.
@@ -119,14 +126,16 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 ```swift
 let subject = "iOS programmering"
-println("\((subject.characters.count)) tegn")
+
 if(subject == "iOS programmering") {
     println("😘 " + subject)
 }
 ```
 Og ja, du kan bruke emojis 😛
 
+```swift
 let 🚀 = "falcon 9 rocket" 
+```
 
 ---
 
@@ -136,6 +145,11 @@ let 🚀 = "falcon 9 rocket"
 let n1 = 10, n2 = 8
 let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
 //10 ganger 8 er 80
+
+let rocket = "Falcon 9"
+print("Det ble skutt opp en \(rocket)")
+print("\(rocket.characters.length))   //  8
+
 ```
 
 ^Strenger kan kombineres ved hjelp av streng interpolation. Der man også kan skrive matematiske utrykk.
@@ -146,11 +160,11 @@ let mathString = "\(n1) ganger \(n2) er \(n1 * n2)"
 # Numbers
 
 ```swift
-let heltall = 30 // Int32 / Int64 avhengig av plattform
+let heltall = 30 // Int
 let heltall2 : Int = 25
 let desimaltall = 30.45
 let desimaltall2 : Float = 30.456 // 32 bit presisjon
-let desimaltall3 : Double = 30.456 // 64 bit presisjon
+let desimaltall3 : Double = 30.456 // 64 bit presisjon // Double er default type inferred
 ```
 
 ---
@@ -163,10 +177,10 @@ Grupperer flere verdier inn i en verdi. Godt egnet i funksjoner som skal returne
 let (x, y) = (50, 300)
 
 let error = (455, "Login unavailable")
-println(error.1) // Login unavailable
+print(error.1) // Login unavailable
 
 let (statusCode, message) = error
-println(statusCode) // 455
+print(statusCode) // 455
 ```
 
 ---
@@ -175,7 +189,7 @@ println(statusCode) // 455
 
 // Navngitte felter i tupler
 let error = (code: 455, message: "Login unavailable")
-println(error.message) // Login unavailable
+print(error.message) // Login unavailable
 ```
 
 ---
@@ -202,8 +216,11 @@ Da får man kompile error
 ---
 
 ```swift
+<br />
 if let welcomeMessage = possibleWelcomeMessage {
         println(welcomeMessage)
+} else {
+   // Håndter at verdien var nil
 }
 ```
 
@@ -216,11 +233,11 @@ if let welcomeMessage = possibleWelcomeMessage {
 ```swift
 
 for nr in 1...10 { // 1 t.o.m. 10
-    println("\(nr) ganger 2 er \(nr*2)")
+    print("\(nr) ganger 2 er \(nr*2)")
 }
 
 for nr in 1..<10 { // 1 t.o.m. 9
-    println("\(nr) ganger 2 er \(nr*2)")
+    print("\(nr) ganger 2 er \(nr*2)")
 }
 
 ```
@@ -233,12 +250,13 @@ for nr in 1..<10 { // 1 t.o.m. 9
 
 # Collection types
 
-_Det finnes to typer collections i Swift_
+_Det finnes tre typer collections i Swift_
 
 <br />
 
 * _Arrays_
 * _Dictionaries_
+* _Set_
 
 
 ^ De vanlige typene finnes også i Swift
@@ -251,6 +269,8 @@ _Det finnes to typer collections i Swift_
 // Deklaring
 let jobs = [String]()
 
+let jobs = Array<String>()
+
 // merk ingen spesifisering av type
 var jobs = ["Systemutvikler", "Prosjektleder", "Frontend-Utvikler"]
 
@@ -259,7 +279,7 @@ jobs[0]
 
 // Iterering
 for job in jobs {
-    println(job)
+    print(job)
 }
 ```
 
@@ -285,12 +305,12 @@ jobs[2..<5] = ["Rådgiver", "Backend-Utvikler", "Prosjektleder"]
 // Deklaring
 let emptyDictionary = [String: Float]()
 var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
-
+s
 // Uthenting
-jobs["Systemutvikler"]
+jobs["Systemutvikler"]  // = 35
 
-for (name, count) in jobs {
-    println("\(name): \(count)")
+for (key, value) in jobs {
+    println("\(key): \(value)")
 }
 
 // Modifisering
@@ -299,6 +319,23 @@ people["Prosjektleder"] = 81
 ```
 
 ^ I dicionary så holdes ting på normalt nivå og mange av dere kjenner nok igjen dette fra andre språk.
+
+---
+
+# Set
+
+
+```swift
+
+var people = Set(["Elon Musk"", "Neil DeGrasse Tyson", "Bill Nye"])
+
+people.remove("Elon Musk")   // returnerer nil hvis den ikke finnes
+
+people.insert("Carl Sagan")  
+
+
+```
+
 
 ---
 
@@ -365,6 +402,9 @@ default:
 # Du kan switche på instanser
 
 ``` swift
+let childButton = UIButton()
+let oldisButton = UIButton()
+
 switch sender {
   case childButton:
     println("Du er et barn!")
@@ -395,14 +435,27 @@ switch sender {
 ###### _read–eval–print loop støtte_
 ###### _Startes med ```xcrun swift```_
 
+
+---
+
+# Swift online editor
+http://swiftstub.com/
+
 ---
 
 # For å kjøre Swift i terminalen
-## må man sette nyeste xcode med
+## må man sette nyeste xcode beta med
 ## _`xcode-select`_
 
 _xcode-select -s /Applications/Xcode-beta.app/Contents/Developer_
 
+
+---
+
+## Videre lesning
+* 3-11 i TSPL (Swift 2 prerelase)
+* http://bit.do/the-basics - Apple-dokumentasjon om basics i Swift
+* http://bit.do/control-flow - Apple-dokumentasjon om control flow
 
 ---
 
@@ -411,6 +464,6 @@ _xcode-select -s /Applications/Xcode-beta.app/Contents/Developer_
 ##       http://bit.do/forelesning1
 
 
-#### Forelesningen er basert på fjorårets foiler, lage at
+#### Forelesningen er basert på fjorårets foiler, laget av
 #### Hans Magnus Inderberg og Mads Mobæk
 
