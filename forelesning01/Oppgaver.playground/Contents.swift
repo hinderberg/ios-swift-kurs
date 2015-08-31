@@ -134,7 +134,7 @@ Java
 Objective-C
 Python
 
-Lag deretter en fil kalt “swiftsort” med følgede innhold:
+Lag deretter en fil kalt “swiftsort.swift” med følgede innhold:
 
 #!/usr/bin/env xcrun swift
 import Cocoa
@@ -150,7 +150,7 @@ Prøv å kjøre applikasjonen med
 
 Du skal nå se "Hello world" i terminalen. Oppgaven videre er å oppdatere swiftsort slik at
 
-cat languages.txt|./swiftsort
+cat languages.txt | ./swiftsort
 
 Vil skrive ut:
 
