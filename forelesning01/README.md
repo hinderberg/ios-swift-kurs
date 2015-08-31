@@ -6,9 +6,13 @@
 
 ---
 
-### Håkon bogen
-github.com/haaakon
+## Håkon bogen
 
+##### github.com/haaakon
+
+
+##### www.shortcut.no 
+    
 ---
 
 # Agenda
@@ -25,7 +29,7 @@ github.com/haaakon
 * Ikke lenger Objective-C, men Swift
 * The Swift Programming Language (Swift 2 prerelease)  - Apple
 * iOS-programming with Swift - O'Reilly
-* Deleksamen og innlevering 
+* en Deleksamen og en innlevering 
 
 ---
 
@@ -39,7 +43,7 @@ github.com/haaakon
 
 ---
 
-# XCode 7 Beta 6 
+# XCode 7 (Beta 6) 
 
 * last ned på https://developer.apple.com/xcode/downloads/
 
@@ -72,7 +76,7 @@ F#, Java, Lisp, JavaScript, Diverse funksjonelle språk.
 
 ---
 
-### Skrive til console
+# Skrive til console
 
 <br>
 
@@ -439,7 +443,9 @@ switch sender {
 ---
 
 # Swift online editor
+
 http://swiftstub.com/
+
 
 ---
 
