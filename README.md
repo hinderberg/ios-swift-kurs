@@ -25,6 +25,7 @@ ios-swift-kurs
 * deinit og ARC
 * Optionals og Optional chaining
 * Type casting og Nested types
+* Error handling
 * Protocols
 * Extentions
 * Generics
@@ -38,12 +39,12 @@ ios-swift-kurs
 * MVC
 * View og view controllers
 
-[Container controllere, patterns og auto layout](forelesning05)
+UIViewController, patterns og auto layout](forelesning05)
 --------------
 * Delegate pattern
 * UINavigationController
 * UITableView og UITableViewController
-* UICollectionsView og UICollectionViewController
+* UICollectionView og UICollectionViewController
 * Auto Layout
 * Unified Storyboard og Size classes
 
@@ -56,33 +57,35 @@ ios-swift-kurs
 * Gestures
 * Animasjoner
 
-[Debugging, Rammeverk, Asynkronitet og CloudKit](forelesning07)
+[Debugging, Testing, Rammeverk, Asynkronitet](forelesning07)
 --------------
 * Debugging
+* Testing
 * Swift og gjenbruk av kode
   * Bundles
   * Rammeverk
 * Tråder og asynkronitet
 * Snakke med internett
-* Cloud Kit
 
-[App extensions](forelesning08)
+[Persistering](forelesning08)
 --------------
-* Typer app extensions
-* Hvordan fungerer app extensions?
-* Eksempel Today, Share og Action extension
-* Tilgang til nettsider i extensions med JavaScript
+* Hvor filer lagres
+* Enkel lesing og skriving til disk
+* NSUserDefaults 
+* NSKeyedArchiver / NSKeyedUnarchiver
+* Core Data
+* FetchedResultsController
 
-[Multimedia](forelesning09)
+
+[Apple Watch-apper](forelesning09)
+--------------
+
+* Vise data på klokka
+* Hente ny data
+* Glances
+
+[Multimedia](forelesning10)
 --------------
 * Enkle 2D spill og Swift
 * Video
 * Lyd
-
-[Persistering](forelesning10)
---------------
-* Hvor filer lagres
-* Enkel lesing og skriving til disk
-* NSUserDefaults
-* NSKeyedArchiver / NSKeyedUnarchiver
-* Core Data
