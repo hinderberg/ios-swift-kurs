@@ -119,12 +119,14 @@ For eksempel hvis du setter en Double til å vœre Float.
 
 ```swift
 let subject = "iOS programmering"
-println("\(countElements(subject)) tegn")
+println("\((subject.characters.count)) tegn")
 if(subject == "iOS programmering") {
     println("😘 " + subject)
 }
 ```
-Og ja, du kan bruke emoticons 😛
+Og ja, du kan bruke emojis 😛
+
+let 🚀 = "falcon 9 rocket" 
 
 ---
 
