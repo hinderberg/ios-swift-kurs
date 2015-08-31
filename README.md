@@ -9,7 +9,7 @@ ios-swift-kurs
 * XCode
 * Swift
 
-[Swift del 2](forelesning02)
+Swift del 2
 --------------
 * Funksjoner
 * Closures
@@ -19,7 +19,7 @@ ios-swift-kurs
 * Metoder
 * Access control
 
-[Swift del 3](forelesning03)
+Swift del 3
 --------------
 * Subscripts, Kontrutører og Arv
 * deinit og ARC
@@ -30,7 +30,7 @@ ios-swift-kurs
 * Extentions
 * Generics
 
-[Intro til iOS-utvikling](forelesning04)
+Intro til iOS-utvikling
 --------------
 * Sette opp et nytt iOS prosjekt i XCode
 * Komponentene i en iOS app
@@ -39,7 +39,7 @@ ios-swift-kurs
 * MVC
 * View og view controllers
 
-UIViewController, patterns og auto layout](forelesning05)
+UIViewController, patterns og auto layout
 --------------
 * Delegate pattern
 * UINavigationController
@@ -48,7 +48,7 @@ UIViewController, patterns og auto layout](forelesning05)
 * Auto Layout
 * Unified Storyboard og Size classes
 
-[Views og animasjoner](forelesning06)
+Views og animasjoner
 --------------
 * Viewkonsepter
 * Å instansiere views
@@ -57,7 +57,7 @@ UIViewController, patterns og auto layout](forelesning05)
 * Gestures
 * Animasjoner
 
-[Debugging, Testing, Rammeverk, Asynkronitet](forelesning07)
+Debugging, Testing, Rammeverk, Asynkronitet
 --------------
 * Debugging
 * Testing
@@ -67,7 +67,7 @@ UIViewController, patterns og auto layout](forelesning05)
 * Tråder og asynkronitet
 * Snakke med internett
 
-[Persistering](forelesning08)
+Persistering
 --------------
 * Hvor filer lagres
 * Enkel lesing og skriving til disk
@@ -77,14 +77,14 @@ UIViewController, patterns og auto layout](forelesning05)
 * FetchedResultsController
 
 
-[Apple Watch-apper](forelesning09)
+Apple Watch-apper
 --------------
 
 * Vise data på klokka
 * Hente ny data
 * Glances
 
-[Multimedia](forelesning10)
+Multimedia
 --------------
 * Enkle 2D spill og Swift
 * Video
