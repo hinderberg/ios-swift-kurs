@@ -2,7 +2,6 @@
 # _PG5600_ iOS programmering
 ## Forelesning 1
 
-#### Sider å lese: 3-11 i TSPL (Swift 2 prerelease)
 
 ---
 
@@ -309,7 +308,7 @@ jobs[2..<5] = ["Rådgiver", "Backend-Utvikler", "Prosjektleder"]
 // Deklaring
 let emptyDictionary = [String: Float]()
 var jobs = ["Rådgiver" : 35, "Systemutvikler" : 21, "Prosjektleder" : 32]
-s
+
 // Uthenting
 jobs["Systemutvikler"]  // = 35
 
@@ -328,10 +327,11 @@ people["Prosjektleder"] = 81
 
 # Set
 
+##### Kun for usorterte unike instanser
 
 ```swift
 
-var people = Set(["Elon Musk"", "Neil DeGrasse Tyson", "Bill Nye"])
+var people = Set(["Elon Musk", "Neil DeGrasse Tyson", "Bill Nye"])
 
 people.remove("Elon Musk")   // returnerer nil hvis den ikke finnes
 
@@ -444,7 +444,7 @@ switch sender {
 
 # Swift online editor
 
-http://swiftstub.com/
+##### http://swiftstub.com/
 
 
 ---
